@@ -1,0 +1,118 @@
+{
+  "id": 133,
+  "applicationId": "20171222JIZ6Y",
+  "fileNumber": "20180103-WIREXM-6FZYF",
+  "applicationName": "Wireman Examination",
+  "type": "WIREXM",
+  "status": "File_in_Processing",
+  "surname": "patidar",
+  "firstName": "ravi",
+  "middleName": "singh",
+  "birthDate": "2003-11-26T00:00:00",
+  "age": 14,
+  "gender": "male",
+  "parmanentAddress": {
+    "id": 142,
+    "addrLine1": null,
+    "addrLine2": null,
+    "addressType": "TEMPORARY",
+    "houseNo": "1233",
+    "buildingName": "121",
+    "state": "GUJARAT",
+    "district": "Ahmedabad",
+    "talukaName": "Ahmedabad",
+    "village": null,
+    "pincode": "999999"
+  },
+  "temporaryAddress": {
+    "id": 143,
+    "addrLine1": null,
+    "addrLine2": null,
+    "addressType": "TEMPORARY",
+    "houseNo": "1233",
+    "buildingName": "121",
+    "state": "GUJARAT",
+    "district": "Ahmedabad",
+    "talukaName": "Ahmedabad",
+    "village": null,
+    "pincode": "999999"
+  },
+  "mobile": "1212313121",
+  "altMobileNumber": "1121231231",
+  "email": "re@ds.cl",
+  "wmanEligibility": "WIREMAN APPRENTICE CLASSES AT TECHNICAL INSTITUTE AND PASSED THE EXAMINATION BY T.E.B.+ SIX MOTHS PRACTICAL EXPERIENCE",
+  "experiences": [
+    {
+      "id": 200,
+      "firmName": "ravi",
+      "supervisorName": "VishalPatel",
+      "fromDate": "2017-12-03T00:00:00",
+      "toDate": "2017-12-19T00:00:00",
+      "contractorLicenceNo": "fdsafasd",
+      "supervisorPermitNo": "ffdsafdas"
+    },
+    {
+      "id": 201,
+      "firmName": "nascent",
+      "supervisorName": "VishalPatel",
+      "fromDate": "2017-11-27T00:00:00",
+      "toDate": "2017-12-20T00:00:00",
+      "contractorLicenceNo": "kjsh",
+      "supervisorPermitNo": "lokld"
+    }
+  ],
+  "preferredExamCenter": "Vadodara",
+  "preferredLangMode": "Gujarati",
+  "attachments": [
+    {
+      "id": "20171222EEZML",
+      "doc_type": "pdf",
+      "doc_name": "1.pdf",
+      "absolute_path": "/home/vishal/CEICED/DATA/CED/20171222JIZ6Y/20171222EEZML.pdf",
+      "form_part": "1",
+      "related_field_name": "School leaving certificate or matriculation certificate",
+      "field_identifier": "4.1",
+      "portal_variable_name": "attach_school_leaving_certi"
+    },
+    {
+      "id": "20171222OTOTQ",
+      "doc_type": "pdf",
+      "doc_name": "3.pdf",
+      "absolute_path": "/home/vishal/CEICED/DATA/CED/20171222JIZ6Y/20171222OTOTQ.pdf",
+      "form_part": "1",
+      "related_field_name": "Attach electricty bill for address proof or any Govt. valid ID proof",
+      "field_identifier": "6.7",
+      "portal_variable_name": "attach_per_address_proof"
+    },
+    {
+      "id": "20171222MKOU7",
+      "doc_type": "pdf",
+      "doc_name": "1.pdf",
+      "absolute_path": "/home/vishal/CEICED/DATA/CED/20171222JIZ6Y/20171222MKOU7.pdf",
+      "form_part": "1",
+      "related_field_name": "Attach electricty bill for address proof or any Govt. valid ID proof",
+      "field_identifier": "7.7",
+      "portal_variable_name": "attach_temp_address_proof"
+    },
+    {
+      "id": "20171222BXBG2",
+      "doc_type": "pdf",
+      "doc_name": "3.pdf",
+      "absolute_path": "/home/vishal/CEICED/DATA/CED/20171222JIZ6Y/20171222BXBG2.pdf",
+      "form_part": "1",
+      "related_field_name": "Attach a passport size photograph",
+      "field_identifier": "15.1",
+      "portal_variable_name": "attach_wireman_photo"
+    },
+    {
+      "id": "20171222MRJOU",
+      "doc_type": "pdf",
+      "doc_name": "5.pdf",
+      "absolute_path": "/home/vishal/CEICED/DATA/CED/20171222JIZ6Y/20171222MRJOU.pdf",
+      "form_part": "1",
+      "related_field_name": "Attach a scan copy of signature",
+      "field_identifier": "16.1",
+      "portal_variable_name": "attach_wireman_sign"
+    }
+  ]
+}WIREXM

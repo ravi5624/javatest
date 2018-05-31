@@ -1,0 +1,142 @@
+{
+  "id": 130,
+  "applicationId": "20180103-WIREXM-OD5K9",
+  "fileNumber": "20180103-WIREXM-6FZYF",
+  "applicationName": "Form A1* “Application For Admission To Examination For Wireman.”",
+  "type": "WIREXM",
+  "status": "File_in_Processing",
+  "surname": "SN",
+  "firstName": "FN",
+  "middleName": "MN",
+  "birthDate": "2017-12-01T00:00:00",
+  "age": 20,
+  "gender": "Male",
+  "parmanentAddress": {
+    "id": 161,
+    "addrLine1": "line1",
+    "addrLine2": "Line2",
+    "addressType": "TEMPORARY",
+    "houseNo": "55",
+    "buildingName": "Arise",
+    "state": "GUJARAT",
+    "district": "Vadodara",
+    "talukaName": "vadodara",
+    "village": "sankheda",
+    "pincode": "390019"
+  },
+  "temporaryAddress": null,
+  "mobile": "7878282806",
+  "altMobileNumber": "7878282806",
+  "email": "vijay.parmar@email.com",
+  "wmanEligibility": "MCA",
+  "experiences": [
+    {
+      "id": 150,
+      "firmName": "setWmanOrgSupFirmName",
+      "supervisorName": "supervisorName",
+      "fromDate": "2011-09-02T00:00:00",
+      "toDate": "2012-09-02T00:00:00",
+      "contractorLicenceNo": "WmanContractorLicenceNo",
+      "supervisorPermitNo": "setWmanSupSupervisorPermitNo"
+    },
+    {
+      "id": 151,
+      "firmName": "setWmanOrgSupFirmName",
+      "supervisorName": "supervisorName",
+      "fromDate": "2011-09-02T00:00:00",
+      "toDate": "2012-09-02T00:00:00",
+      "contractorLicenceNo": "WmanContractorLicenceNo",
+      "supervisorPermitNo": "setWmanSupSupervisorPermitNo"
+    },
+    {
+      "id": 152,
+      "firmName": "setWmanOrgSupFirmName",
+      "supervisorName": "supervisorName",
+      "fromDate": "2013-09-02T00:00:00",
+      "toDate": "2014-09-02T00:00:00",
+      "contractorLicenceNo": "WmanContractorLicenceNo",
+      "supervisorPermitNo": "setWmanSupSupervisorPermitNo"
+    }
+  ],
+  "preferredExamCenter": "Ahmedabad",
+  "preferredLangMode": "English",
+  "attachments": [
+    {
+      "id": "5STZG",
+      "doc_type": "json",
+      "doc_name": "5STZG.json",
+      "absolute_path": "/CEI/20180103-WIREXM-OD5K9/5STZG.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "School leaving certificate or matriculation certificate",
+      "field_identifier": "4.1",
+      "portal_variable_name": "school_leaving"
+    },
+    {
+      "id": "APLUA",
+      "doc_type": "json",
+      "doc_name": "APLUA.json",
+      "absolute_path": "/CEI/20180103-WIREXM-OD5K9/APLUA.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Attach electricty bill for address proof or any Govt. valid ID proof",
+      "field_identifier": "6.7",
+      "portal_variable_name": "electricty_bill"
+    },
+    {
+      "id": "NZLOJ",
+      "doc_type": "json",
+      "doc_name": "NZLOJ.json",
+      "absolute_path": "/CEI/20180103-WIREXM-OD5K9/NZLOJ.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Attach electricty bill for address proof or any Govt. valid ID proof",
+      "field_identifier": "7.7",
+      "portal_variable_name": "electricty_bill"
+    },
+    {
+      "id": "2DKDE",
+      "doc_type": "json",
+      "doc_name": "2DKDE.json",
+      "absolute_path": "/CEI/20180103-WIREXM-OD5K9/2DKDE.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "form K",
+      "field_identifier": "12.1",
+      "portal_variable_name": "form_k"
+    },
+    {
+      "id": "STLMF",
+      "doc_type": "json",
+      "doc_name": "STLMF.json",
+      "absolute_path": "/CEI/20180103-WIREXM-OD5K9/STLMF.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Copy of Form “I” verified by authority or his representative",
+      "field_identifier": "12.2",
+      "portal_variable_name": "form_i"
+    },
+    {
+      "id": "WOEST",
+      "doc_type": "json",
+      "doc_name": "WOEST.json",
+      "absolute_path": "/CEI/20180103-WIREXM-OD5K9/WOEST.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Attach a pasport size photograph",
+      "field_identifier": "15.1",
+      "portal_variable_name": "passport_photograph"
+    },
+    {
+      "id": "WNQEM",
+      "doc_type": "json",
+      "doc_name": "WNQEM.json",
+      "absolute_path": "/CEI/20180103-WIREXM-OD5K9/WNQEM.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Attach a scan copy of signature",
+      "field_identifier": "16.1",
+      "portal_variable_name": "scan_signature"
+    }
+  ]
+}

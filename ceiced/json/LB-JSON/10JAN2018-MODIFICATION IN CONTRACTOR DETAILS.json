@@ -1,0 +1,39 @@
+{
+  "id": 150,
+  "applicationId": "20180110-CONMODI-W8NDR",
+  "fileNumber": "20180110-CONMODI-AMBAZ",
+  "applicationName": "MODIFICATION IN CONTRACTOR’S DETAILS",
+  "type": "CONMODI",
+  "status": "File_in_Processing",
+  "isNameCorrection": true,
+  "contractorName": "Surname FirstName MiddleName",
+  "isAddressChange": true,
+  "contractorLicenseNo": "252599998",
+  "licenseNoIssueDate": "2015-08-02 02:50:12",
+  "attachments": [
+    {
+      "id": "CR8AU",
+      "doc_type": "json",
+      "doc_name": "CR8AU.json",
+      "absolute_path": "/CEI/20180110-CONMODI-W8NDR/CR8AU.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Attach electricty bill for address pfroof or any Govt. valid ID proof",
+      "field_identifier": "6.7",
+      "portal_variable_name": "electricty_bill"
+    }
+  ],
+  "officeAddress": {
+    "id": 170,
+    "addrLine1": null,
+    "addrLine2": null,
+    "addressType": "OFFICE",
+    "houseNo": "25",
+    "buildingName": "Arise",
+    "state": "Gujarat",
+    "district": "Vadodara",
+    "talukaName": "Sankheda",
+    "village": "Rampura",
+    "pincode": "390019"
+  }
+}

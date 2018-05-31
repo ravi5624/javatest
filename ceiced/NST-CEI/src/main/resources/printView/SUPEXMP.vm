@@ -1,0 +1,497 @@
+<html>
+<head>
+    <title>Application : $!data.applicationName</title>
+    <style>
+        html, body {height:100%; width:100%; font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+        body {font-family: arial, sans-serif; font-size: 14px; color:#333; background-color:#fff; padding: 0; margin: 0;}
+
+        .container-fluid {max-width: 1230px; padding-top: 20px; padding-bottom: 20px; margin: 0 auto;}
+
+        h2 {font-size: 20px; color: #000; text-transform: uppercase; padding:25px 0 10px; font-weight:normal;}
+        .hr {border-bottom: 1px dotted #333; height: 2px; width: 100%; margin: 10px 0;}
+        p {padding-bottom: 20px; line-height: 22px;}
+        table { border-collapse: collapse; border-spacing: 0;}
+
+        .tableCss {margin: 10px -10px; width: 100%;}
+        .tableCss th, .tableCss td {width: 33.3333%; padding:10px; line-height:normal; text-align: left; border: 0 !important;}
+        .tableCss td.colSpa-66  {width: 66.6666%;}
+        .tableCss td.colSpa-100  {width: 100%;}
+        .tableCss td > div {font-weight: bold; padding-bottom: 15px;}
+        .tableCss td > div > span {font-weight: normal; display: block; padding-top: 5px; color: #999;}
+        .tableCss tr:nth-child(odd) th { background-color: #f2f2f2; }
+        .tableCss tr:nth-child(even) th { background-color: #ffffff;}
+
+        .tableFormat {margin: 10px 0; width: 100%; }
+        .tableFormat th, .tableFormat td {padding:10px; line-height:normal; text-align: left;}
+
+        .firstBottom-tl {border: 1px solid #999 !important; /*margin:0 10px;*/ }
+        .firstBottom-tl tr > th {border-bottom: 1px solid #999;}
+        .firstBottom-tl th {background-color: #F1F1F1;}
+        .topBorder > td {border-top: 1px solid #999;}
+        .firstBottom-tl tr > th:first-child {border-right:1px solid #999;}
+        .firstBottom-tl tr > td:first-child {border-right:1px solid #999;}
+
+        .print {border: 0; background: #333; color: #fff; padding: 10px 15px; cursor: pointer;}
+
+        @media print {
+            .container-fluid { width: 100%;}
+            table {page-break-inside:auto;}
+            tr{ page-break-inside:avoid; page-break-after:auto }
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <h2><center>CHIEF ELECTRICAL INSPECTOR AND COLLECTOR OF ELECTRICITY DUTY
+        <br>$data.applicationName
+    </center>
+    </h2>
+    <div style="text-align: right;">
+        Date:<script> document.write(new Date().toLocaleDateString("en-GB")); </script>
+    </div>
+    <h2>PERSONAL DETAILS</h2>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>1. Surname</div>
+              $!data.surname
+            </td>
+            <td>
+                <div>2. First Name</div>
+              $!data.firstName
+            </td>
+            <td>
+                <div>3. Father / Husband Or Middle Name</div>
+              $!data.middleName
+            </td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>4. Date Of Birth (As per school leaving certificate)</div>
+                $!data.formatDate($!data.birthDate)
+            </td>
+            <td>
+                <div>Attach Document<span>4.1 School leaving certificate or matriculation certificate </span></div>
+              $!data.getAttachment("4.1")
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>4.2 Age</div>
+              $!data.age
+            </td>
+            <td>
+                <div>5. Gender</div>
+              $!data.gender
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <h2>6. PERMANENT ADDRESS</h2>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>6.1. House No. / Flat No. / Block No.</div>
+                #if($!data.parmanentAddress.houseNo != '')
+                    $!data.parmanentAddress.houseNo
+                #else
+                    &nbsp;
+                #end
+            </td>
+            <td>
+                <div>6.2 Building Name / Apartment Name</div>
+              $!data.parmanentAddress.buildingName
+            </td>
+            <td>
+                <div>6.3 State</div>
+                $!data.parmanentAddress.state
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>6.4 District</div>
+                $!data.parmanentAddress.district
+            </td>
+            <td>
+                <div>6.5 Taluka</div>
+              $!data.parmanentAddress.talukaName
+            </td>
+            <td>
+                <div>6.6 Village / City</div>
+                $!data.parmanentAddress.village
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>6.7 Pincode</div>
+                $!data.parmanentAddress.pincode
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td colspan="3">
+                <div>Attach Document
+                    <span>6.8 Attach electricty bill for address proof or any Govt. valid ID proof </span>
+                </div>
+              $!data.getAttachment("6.7")
+            </td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td colspan="3">
+                <div><h2>7. TEMPORARY ADDRESS (Please Provide Your Current / Postal / Correpondence Address)</h2>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>7.1. House No. / Flat No. / Block No.</div>
+              $!data.temporaryAddress.houseNo
+            </td>
+            <td>
+                <div>7.2 Building Name / Apartment Name</div>
+              $!data.temporaryAddress.buildingName
+            </td>
+            <td>
+                <div>7.3 State</div>
+                $!data.temporaryAddress.state
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>7.4 District</div>
+                $!data.temporaryAddress.district
+            </td>
+            <td>
+                <div>7.5 Taluka</div>
+              $!data.temporaryAddress.talukaName
+            </td>
+            <td>
+                <div>7.6 Village / City</div>
+                $!data.temporaryAddress.village
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>7.7 Pincode</div>
+                $!data.temporaryAddress.pincode
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td colspan="3">
+                <div>Attach Document
+                    <span>7.8 Attach electricty bill for address proof or any Govt. valid ID proof</span>
+                </div>
+              $!data.getAttachment("7.7")
+            </td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <h2>CONTACT DETAILS</h2>
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>8. Mobile No</div>
+              $!data.mobile
+            </td>
+            <td>
+                <div>9. Alternate Mobile No. (Optional)</div>
+              $!data.altMobileNumber
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div>10. Email Id Of The Applicant</div>
+              $!data.email
+            </td>
+        </tr>
+    </table>
+
+    <table class="tableCss">
+        <tr>
+            <td colspan="3">
+                <div><span>11. QUALIFICATION</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>11.1 Technical Qualification</div>
+                $!data.technicalQualification
+            </td>
+            <td>
+                <div> 11.2 Enrolment no.</div>
+                $!data.supEnrollmentNo
+            </td>
+            <td>
+                <div> 11.3 Total Experience</div>
+                $!data.totalExperience
+            </td>
+        </tr>
+    </table>
+
+<div class="hr"></div>
+
+    #if($!data.technicalQualification == 'DIPLOMA_IN_ELECTRICAL' || $!data.technicalQualification == 'DIPLOMA_IN_ELECTRICAL_ELECTRONICS')
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>Attach Document
+                        <span> 11.3. MARKS SHEET OF LAST YEAR</span></div>
+                    $!data.getAttachment("11.3")
+                </td>
+
+                <td colspan="3">
+                    <div>  <span> 11.4 DIPLOMA CERTIFICATE</span></div>
+                    $!data.getAttachment("11.4")
+                </td>
+            </tr>
+        </table>
+    #end
+    #if($!data.technicalQualification == 'DEGREE_IN_ELECTRICAL' || $!data.technicalQualification == 'DEGREE_IN_ELECTRICAL_ELECTRONICS')
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>Attach Document
+                        <span> 11.3. MARKS SHEET OF LAST YEAR</span></div>
+                    $!data.getAttachment("11.3")
+                </td>
+
+                <td colspan="3">
+                    <div>  <span>  11.4 DEGREE CERTIFICATE</span></div>
+                    $!data.getAttachment("11.4")
+                </td>
+            </tr>
+        </table>
+    #end
+
+    #if($!data.technicalQualification == 'ELECTRICIAN_NCVT')
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>Attach Document
+                        <span>11.3 National apprenticeship certificate (ELE)</span></div>
+                    $!data.getAttachment("11.3")
+                </td>
+
+                <td>
+                    <div><span>11.4 Form "K"</span></div>
+                    $!data.getAttachment("11.4")
+                </td>
+                <td>
+                    <div><span>11.5 Copy of Form “I” verified by Electrical Inspector or his representative</span></div>
+                    $!data.getAttachment("11.5")
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>Attach Document
+                        <span>11.3 National apprenticeship certificate (ELE)</span></div>
+                    $!data.getAttachment("11.6")
+                </td>
+
+            </tr>
+        </table>
+    #end
+
+    #if($!data.technicalQualification == 'ELECTRIC_SERVICE_TECHNICIAN')
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>Attach Document
+                        <span> 11.3. Technical Examination Board Certificate</span></div>
+                    $!data.getAttachment("11.3")
+                </td>
+
+                <td>
+                    <div><span>11.4 Form "K"</span></div>
+                    $!data.getAttachment("11.4")
+                </td>
+                <td>
+                    <div><span>11.5 Copy of Form “I” verified by Electrical Inspector or his representative</span></div>
+                    $!data.getAttachment("11.5")
+                </td>
+
+            </tr>
+
+        </table>
+    #end
+
+    #if($!data.technicalQualification == 'DIPLOMA_IN_ELECTRICAL_ENGINEERING' || $!data.technicalQualification == 'DIPLOMA_IN_ELECTRICAL_ELECTRONICS_ENGINEERING')
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>Attach Document
+                        <span> 11.3 DIPLOMA CERTIFICATE</span></div>
+                    $!data.getAttachment("11.3")
+                </td>
+            </tr>
+        </table>
+    #end
+    #if($!data.technicalQualification == 'BE_BTECH_IN_ELECTRICAL' || $!data.technicalQualification =='BE_BTECH_IN_ELECTRICAL_ELECTRONICS')
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>Attach Document
+                        <span>11.3 DEGREE CERTIFICATE</span></div>
+                    $!data.getAttachment("11.3")
+                </td>
+            </tr>
+        </table>
+    #end
+    #if($!data.technicalQualification == 'ANY_OTHER_QUALIFICATIONS')
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>Attach Document
+                        <span>11.3. CERTIFICATE</span></div>
+                    $!data.getAttachment("11.3")
+                </td>
+            </tr>
+        </table>
+    #end
+
+<div class="hr"> </div>
+
+<table class="tableCss">
+    <tr>
+        <td>
+            <div>12. Name of University</div>
+          $!data.supUniversityName
+        </td>
+        <td>
+            <div>12.1 Year Of Passing</div>
+          $!data.passYear
+        </td>
+        <td>
+            <div>12.2 State</div>
+          $!data.qualificationState
+        </td>
+    </tr>
+</table>
+
+<table class="tableCss">
+   <tr>
+       <h2>Affidavit To Be Attached If From Other State</h2>
+   </tr>
+    #if($!data.qualificationState != 'GUJARAT')
+        <tr>
+            <td colspan="3">
+                <div><span>12.3 Attach affidavit if not from Gujarat</span></div>
+                $!data.getAttachment("12.3")
+            </td>
+            <td>
+                <div><span>12.4 Attach Permenant address proof of the state from which you belong if not from Gujarat</span></div>
+                $!data.getAttachment("12.4")
+            </td>
+        </tr>
+    #end
+
+</table>
+
+<div class="hr"> </div>
+
+
+<table class="tableCss">
+    <tr>
+        <td>
+            <div>13. Name Of The Institute & College</div>
+          $!data.supInstituteCollegeName
+        </td>
+        <td>
+            <div>13.1 Name Of District Of College</div>
+          $!data.supCollegeDist
+        </td>
+    #if($!data.qualificationState != 'GUJARAT')
+        <td colspan="3">
+            <div>Attach Document
+                <span>13.2 Attach marksheet of all sem if from Other state</span></div>
+          $!data.getAttachment("13.2")
+        </td>
+    #end
+    </tr>
+</table>
+
+<div class="hr"> </div>
+
+<table class="tableCss">
+    <tr>
+        <td colspan="3">
+            <div>Attach Document
+                <div>14. Upload Photograph</div><span>14.1 Attach a pasport size photograph</span></div>
+            <img width="150" height="150" src="$!data.getImageInBase64("14.1")" alt="$!data.getAttachment("14.1")">
+        </td>
+
+        <td colspan="3">
+            <div>15. Upload Signature
+                <span>15.1 Attach a scan copy of signature</span>
+            </div>
+            <img width="150" height="150" src="$!data.getImageInBase64("15.1")" alt="$!data.getAttachment("15.1")">        </td>
+    </tr>
+</table>
+
+
+<div class="hr"></div>
+
+
+    <p>Declaration for exemption of electrical Supervisor permits in Gujarat state.</p>
+
+    <div>
+        #if ($data.noPermit)
+        <input type="checkbox" id="permit" name="permit" checked disabled>
+        #else
+        <input type="checkbox" id="permit" name="permit" disabled>
+        #end
+        I hereby declare that i am not holding any Supervisor permit issued by Gujarat state or any other state.
+    </div>
+    <br><br>
+    <div>
+
+        #if ($data.iagree)
+            <input type="checkbox" id="iagree" name="iagree" checked disabled>
+        #else
+            <input type="checkbox" id="iagree" name="iagree" disabled>
+        #end
+        I myself is liable for prosecution for false information.
+    </div>
+<p>
+    <button class="print" onclick="window.print()">Print This Page</button>
+</p>
+</div>
+</body>
+</html>

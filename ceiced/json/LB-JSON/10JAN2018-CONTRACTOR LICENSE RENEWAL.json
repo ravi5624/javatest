@@ -1,0 +1,69 @@
+{
+  "id": 150,
+  "applicationId": "20180110-CONREN-SCRVE",
+  "fileNumber": "20180110-CONREN-EYFGB",
+  "applicationName": "CONTRACTOR’S LICENSE RENEWAL",
+  "type": "CONREN",
+  "status": "File_in_Processing",
+  "contractorName": "Surname FirstName MiddleName",
+  "contractorLicNo": "546546546",
+  "issueDate": "2011-09-02 02:50:12",
+  "licenseExpiryDate": "2012-09-02 02:50:12",
+  "oldSupervisorName": "Name1",
+  "oldSupervisorBirthDate": "1988-12-02 02:50:12",
+  "oldSupervisorJoineeDate": "2011-09-02 02:50:12",
+  "oldSupervisorLeavingDate": "2013-09-02 02:50:12",
+  "isWorkingOldSupervisor": true,
+  "newSupervisorName": "Vijx",
+  "newSupervisorBirthDate": "1988-12-02 02:50:12",
+  "newSupervisorJoineeDate": "2013-09-02 02:50:12",
+  "isAddressChange": true,
+  "parmanentAddress": {
+    "id": 170,
+    "addrLine1": "Line1",
+    "addrLine2": "Line2",
+    "addressType": "PERMANENT",
+    "houseNo": "25",
+    "buildingName": "Arise",
+    "state": "Gujarat",
+    "district": "Vadodara",
+    "talukaName": "Sankheda",
+    "village": "Rampura",
+    "pincode": "390019"
+  },
+  "attachments": [
+    {
+      "id": "XB8LH",
+      "doc_type": "json",
+      "doc_name": "XB8LH.json",
+      "absolute_path": "/CEI/20180110-CONREN-SCRVE/XB8LH.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Copy of Form “I” verified by authority or his representative",
+      "field_identifier": "5",
+      "portal_variable_name": "form_i"
+    },
+    {
+      "id": "IUISD",
+      "doc_type": "json",
+      "doc_name": "IUISD.json",
+      "absolute_path": "/CEI/20180110-CONREN-SCRVE/IUISD.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Attach electricty bill for address pfroof or any Govt. valid ID proof",
+      "field_identifier": "8.7",
+      "portal_variable_name": "electricty_bill"
+    },
+    {
+      "id": "IITC9",
+      "doc_type": "json",
+      "doc_name": "IITC9.json",
+      "absolute_path": "/CEI/20180110-CONREN-SCRVE/IITC9.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Attach Owners Signature",
+      "field_identifier": "9",
+      "portal_variable_name": "owner_signature"
+    }
+  ]
+}

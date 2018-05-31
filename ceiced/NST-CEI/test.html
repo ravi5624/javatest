@@ -1,0 +1,373 @@
+<html>
+<head>
+    <title>Application : $!data.applicationName</title>
+    <style>
+        html, body {height:100%; width:100%; font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+        body {font-family: arial, sans-serif; font-size: 14px; color:#333; background-color:#fff; padding: 0; margin: 0;}
+
+        .container-fluid {max-width: 1230px; padding-top: 20px; padding-bottom: 20px; margin: 0 auto;}
+
+        h2 {font-size: 20px; color: #000; text-transform: uppercase; padding:25px 0 10px; font-weight:normal;}
+        .hr {border-bottom: 1px dotted #333; height: 2px; width: 100%; margin: 10px 0;}
+        p {padding-bottom: 20px; line-height: 22px;}
+        table { border-collapse: collapse; border-spacing: 0;}
+
+        .tableCss {margin: 10px -10px; width: 100%;}
+        .tableCss th, .tableCss td {width: 33.3333%; padding:10px; line-height:normal; text-align: left; border: 0 !important;}
+        .tableCss td.colSpa-66  {width: 66.6666%;}
+        .tableCss td.colSpa-100  {width: 100%;}
+        .tableCss td > div {font-weight: bold; padding-bottom: 15px;}
+        .tableCss td > div > span {font-weight: normal; display: block; padding-top: 5px; color: #999;}
+        .tableCss tr:nth-child(odd) th { background-color: #f2f2f2; }
+        .tableCss tr:nth-child(even) th { background-color: #ffffff;}
+
+        .tableFormat {margin: 10px 0; width: 100%; }
+        .tableFormat th, .tableFormat td {padding:10px; line-height:normal; text-align: left;}
+
+        .firstBottom-tl {border: 1px solid #999 !important; /*margin:0 10px;*/ }
+        .firstBottom-tl tr > th {border-bottom: 1px solid #999;}
+        .firstBottom-tl th {background-color: #F1F1F1;}
+        .topBorder > td {border-top: 1px solid #999;}
+        .firstBottom-tl tr > th:first-child {border-right:1px solid #999;}
+        .firstBottom-tl tr > td:first-child {border-right:1px solid #999;}
+
+        .print {border: 0; background: #333; color: #fff; padding: 10px 15px; cursor: pointer;}
+
+        @media print {
+            .container-fluid { width: 100%;}
+            table {page-break-inside:auto;}
+            tr{ page-break-inside:avoid; page-break-after:auto }
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+
+    <h2>PERSONAL DETAILS</h2>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>1. Surname</div>
+                $!data.surname
+            </td>
+            <td>
+                <div>2. First Name</div>
+                $!data.firstName
+            </td>
+            <td>
+                <div>3. Father / Husband Or Middle Name</div>
+                $!data.middlename
+            </td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>4. Date Of Birth (As per school leaving certificate)</div>
+                $!data.birthDate
+            </td>
+            <td>
+                <div>Attach Document<span>4.1 School leaving certificate or matriculation certificate </span></div>
+                $!data.getAttachment("4.1")
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>4. 2 Age</div>
+                $!data.age
+            </td>
+            <td>
+                <div>5. Gender</div>
+                $!data.gender
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <h2>6. PERMANENT ADDRESS</h2>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>6.1. House No. / Flat No. / Block No.</div>
+                #if($!data.parmanentAddress.houseNo != '')
+                $!data.parmanentAddress.houseNo
+                #else
+                &nbsp;
+                #end
+            </td>
+            <td>
+                <div>6.2 Building Name / Apartment Name</div>
+                $!data.parmanentAddress.buildingName
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <div>6.3 Taluka Name</div>
+                $!data.parmanentAddress.talukaName
+            </td>
+            <td>
+                <div>6.4 District Name</div>
+                $!data.parmanentAddress.district
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <div>6.5 State</div>
+                $!data.parmanentAddress.state
+            </td>
+            <td>
+                <div>6.6 Pincode</div>
+                $!data.parmanentAddress.pincode
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td colspan="3">
+                <div>Attach Document
+                    <span>6.7 Attach electricty bill for address proof or any Govt. valid ID proof </span>
+                </div>
+                $!data.getAttachment("6.7")
+            </td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td colspan="3">
+                <div><span>7. TEMPORARY ADDRESS (If the address is as above please dont fill Temporary & correspondence address)</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>7.1. House No. / Flat No. / Block No.</div>
+                #if($!data.temporaryAddress.houseNo != '')
+                    $!data.temporaryAddress.houseNo
+                #else
+                    &nbsp;
+                #end
+            </td>
+            <td>
+                <div>7.2 Building Name / Apartment Name</div>
+                $!data.temporaryAddress.buildingName
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <div>7.3 Taluka Name</div>
+                $!data.temporaryAddress.talukaName
+            </td>
+            <td>
+                <div>7.4 District Name</div>
+                $!data.temporaryAddress.district
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <div>7.5 State</div>
+                $!data.temporaryAddress.state
+            </td>
+            <td>
+                <div>7.6 Pincode</div>
+                $!data.temporaryAddress.pincode
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td colspan="3">
+                <div>Attach Document
+                    <span>7.7 Attach electricty bill for address proof or any Govt. valid ID proof</span></div>
+                $!data.getAttachment("7.7")
+            </td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <h2>CONTACT DETAILS</h2>
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>8. Mobile No</div>
+                $!data.mobile
+            </td>
+            <td>
+                <div>9. Alternate Mobile No. (Optional)</div>
+                $!data.altMobileNumber
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div>10. Email Id Of The Applicant</div>
+                $!data.email
+            </td>
+        </tr>
+    </table>
+
+    <h2>EXAMINATION REQUIREMENTS</h2>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>11. Exam Type</div>
+                $!data.examType
+            </td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>12.Wireman Permit No</div>
+                $!data.permitNo
+            </td>
+            <td colspan="3">
+                <div>Attach Document
+                    <span>7.7 Attach electricty bill for address proof or any Govt. valid ID proof</span></div>
+                $!data.getAttachment("12.1")
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <div class="hr"></div>
+
+
+
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>13. Date of Issue of wireman Permit</div>
+                $!data.permitIssueDate
+            </td>
+            <td>
+                <div>14. Experience</div>
+                $!data.supExperience
+            </td>
+        </tr>
+    </table>
+
+
+    <table class="tableCss">
+        <tr>
+            <td colspan="3">
+                <div>12. Details Of Past & Present Experience</div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="tableFormat firstBottom-tl">
+        <tr>
+            <th>Sn No.</th>
+            <th>Name of organization</th>
+            <th>Electrical contractor no.</th>
+            <th>From (Date of starting)</th>
+            <th>To (Date of leaving)</th>
+            <th>Supervisor Name</th>
+            <th>Supervisor Permit No.</th>
+        </tr>
+        #foreach( $!experience in $!data.experiences)
+        <tr class="topBorder">
+            <td>$!experience.id</td>
+            <td>$!experience.wmanOrgSupFirmName</td>
+            <td>$!experience.wmanContractorLicenceNo</td>
+            <td>$!experience.fromDate</td>
+            <td>$!experience.toDate</td>
+            <td>$!experience.exam</td>
+            <td>$!experience.wmanSupSupervisorPermitNo</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td colspan="6">
+                <table class="tableCss">
+                    <tr>
+                        <td colspan="3">
+                            <div>Attach Document After Filling Above Information</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div><span>12.1 Form “K” (attach all form “K” in one PDF) </span></div>
+                            $!data.getAttachment("12.1")
+                        </td>
+                        <td>
+                            <div><span>12.2 Copy of Form “I” verified by authority or his representative</span></div>
+                            $!data.getAttachment("12.2")
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        #end
+    </table>
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>13. Preferred Examination Centre</div>
+                $!data.preferredExamCentre
+            </td>
+            <td>
+                <div>14. Preferred Mode Of Language</div>
+                $!data.preferredLangMode
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>15. Upload Photograph <span>15.1 Attach a pasport size photograph</span></div>
+                $!data.getAttachment("18.1")
+            </td>
+            <td>
+                <div>16. Upload Signature <span>16.1 Attach a scan copy of signature</span></div>
+                $!data.getAttachment("19.1")
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+
+    <p>I hereby declare that the particuler stated above are correct and true to the best my knowledge.</p>
+
+    <p>
+        <button class="print" onclick="window.print()">Print This Page</button>
+    </p>
+</div>
+</body>
+</html>

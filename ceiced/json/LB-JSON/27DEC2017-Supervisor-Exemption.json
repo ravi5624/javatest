@@ -1,0 +1,70 @@
+{
+  "id": 130,
+  "applicationId": "201712270IAF1",
+  "fileNumber": "20180103-SUPEXMP-6FZYF",
+  "applicationName": "Supervisor Exemption",
+  "type": "SUPEXMP",
+  "status": "File_in_Processing",
+  "surname": "SN",
+  "firstName": "FN",
+  "middleName": "MN",
+  "birthDate": "1995-07-05T02:50:12",
+  "age": 22,
+  "gender": "Female",
+  "parmanentAddress": {
+    "id": 150,
+    "addressType": "PERMANENT",
+    "houseNo": "25",
+    "buildingName": "Arise",
+    "state": "Gujarat",
+    "district": "Vadodara",
+    "talukaName": "Sankheda",
+    "village": "Rampura",
+    "pincode": "390019"
+  },
+  "temporaryAddress": {
+    "id": 151,
+    "addressType": "TEMPORARY",
+    "houseNo": "26",
+    "buildingName": "shapath4",
+    "state": "Gujarat",
+    "district": "Vadodara3",
+    "talukaName": "Sankheda",
+    "village": "Rampura",
+    "pincode": "390020"
+  },
+  "mobile": "1234567890",
+  "altMobileNumber": "7778889999",
+  "email": "test@gmail.com",
+  "technicalQualification": "MCA",
+  "supEnrollmentNo": "4654646999",
+  "supInstituteCollegeName": "MS",
+  "supCollegeDist": "Surat",
+  "supUniversityName": "MS UNI",
+  "passYear": 2013,
+  "qualificationState": "GUJARAT",
+  "attachments": [
+    {
+      "id": "OZ46G",
+      "doc_type": "json",
+      "doc_name": "OZ46G.json",
+      "absolute_path": "/CEI/201712270IAF1/OZ46G.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "original_License",
+      "field_identifier": "Original License",
+      "portal_variable_name": "original_License"
+    },
+    {
+      "id": "R0HLB",
+      "doc_type": "json",
+      "doc_name": "R0HLB.json",
+      "absolute_path": "/CEI/201712270IAF1/R0HLB.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "other_documents",
+      "field_identifier": "Other documents",
+      "portal_variable_name": "other_documents"
+    }
+  ]
+}

@@ -1,0 +1,376 @@
+<<html>
+<head>
+    <title>$!data.applicationName</title>
+    <style>
+        html, body {height:100%; width:100%; font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+        body {font-family: arial, sans-serif; font-size: 14px; color:#333; background-color:#fff; padding: 0; margin: 0;}
+
+        .container-fluid {max-width: 1230px; padding-top: 20px; padding-bottom: 20px; margin: 0 auto;}
+
+        h2 {font-size: 20px; color: #000; text-transform: uppercase; padding:25px 0 10px; font-weight:normal;}
+        .hr {border-bottom: 1px dotted #333; height: 2px; width: 100%; margin: 10px 0;}
+        p {padding-bottom: 20px; line-height: 22px;}
+        table { border-collapse: collapse; border-spacing: 0;}
+
+        .tableCss {margin: 10px -10px; width: 100%;}
+        .tableCss th, .tableCss td {width: 33.3333%; padding:10px; line-height:normal; text-align: left; border: 0 !important;}
+        .tableCss td.colSpa-66  {width: 66.6666%;}
+        .tableCss td.colSpa-100  {width: 100%;}
+        .tableCss td > div {font-weight: bold; padding-bottom: 15px;}
+        .tableCss td > div > span {font-weight: normal; display: block; padding-top: 5px; color: #999;}
+        .tableCss tr:nth-child(odd) th { background-color: #f2f2f2; }
+        .tableCss tr:nth-child(even) th { background-color: #ffffff;}
+
+        .tableFormat {margin: 10px 0; width: 100%; }
+        .tableFormat th, .tableFormat td {padding:10px; line-height:normal; text-align: left;}
+
+        .firstBottom-tl {border: 1px solid #999 !important; /*margin:0 10px;*/ }
+        .firstBottom-tl tr > th {border-bottom: 1px solid #999;}
+        .firstBottom-tl th {background-color: #F1F1F1;}
+        .topBorder > td {border-top: 1px solid #999;}
+        .firstBottom-tl tr > th:first-child {border-right:1px solid #999;}
+        .firstBottom-tl tr > td:first-child {border-right:1px solid #999;}
+
+        .print {border: 0; background: #333; color: #fff; padding: 10px 15px; cursor: pointer;}
+
+        @media print {
+            .container-fluid { width: 100%;}
+            table {page-break-inside:auto;}
+            tr{ page-break-inside:avoid; page-break-after:auto }
+        }
+    </style>
+</head>
+<body bgcolor="#faf7f1">
+<div class="container-fluid">
+
+<h2>
+    <center>CHIEF ELECTRICAL INSPECTOR AND COLLECTOR OF ELECTRICITY DUTY
+        <br>Application : $data.applicationName
+    </center>
+</h2>
+
+<div style="text-align: right;">
+    Date:<script> document.write(new Date().toLocaleDateString("en-GB")); </script>
+</div>
+<hr>
+
+        <h2>1. Staff Details Change Request</h2>
+        <table class="tableFormat firstBottom-tl">
+            <tr>
+                <th>List of employee</th>
+                <th>Name</th>
+                <th>Qualification</th>
+                <th>Designation</th>
+                <th>Joining date</th>
+                <th>Exit date</th>
+                <th>Attachment</th>
+            </tr>
+            #foreach( $!staffEmployees in $!data.staffEmployees)
+                <tr class="topBorder">
+                    <td>$!staffEmployees.employee</td>
+                    <td>$!staffEmployees.name</td>
+                    <td>$!staffEmployees.qualification</td>
+                    <td>$!staffEmployees.designation</td>
+                    <td>$!data.formatDate($!staffEmployees.joiningDate)</td>
+                    <td>$!data.formatDate($!staffEmployees.exitDate)</td>
+                    <td>
+                        #set($x="1.1."+$staffEmployees.id)
+                        $!data.getAttachment($x)
+                    </td>
+                </tr>
+            #end
+        </table>
+<div class="hr"></div>
+
+<h2>2 BRANCH OFFICE ADDRESS CHANGE REQUEST</h2>
+<table class="tableCss">
+    <tr>
+        <td>
+            <div>2.1 Office no. or block no.</div>
+            $!data.branchAddress.houseNo
+        </td>
+        <td>
+            <div>2.2 Building name & Land mark</div>
+            $!data.branchAddress.buildingName
+        </td>
+        <td>
+            <div>2.3 State</div>
+            $!data.branchAddress.state
+        </td>
+    </tr>
+</table>
+<table class="tableCss">
+    <tr>
+        <td>
+            <div>2.4  District</div>
+            $!data.branchAddress.district
+        </td>
+        <td>
+            <div> 2.5 Taluka</div>
+            $!data.branchAddress.talukaName
+        </td>
+        <td>
+            <div>2.6 Village / City</div>
+            $!data.branchAddress.village
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>2.7 Pincode</div>
+            $!data.branchAddress.pincode
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>2.8 Email Id</div>
+            $!data.branchEmail
+        </td>
+        <td>
+            <div>2.9 Mobile Number</div>
+            $!data.branchContactNo
+        </td>
+        <td>
+            <div>Attach Document<span>2.10 attach relevant documents </span></div>
+            $!data.getAttachment("2.10")
+        </td>
+    </tr>
+</table>
+
+<div class="hr"></div>
+
+
+
+
+
+
+<h2>3 MAIN OFFICE ADDRESS CHANGE REQUEST</h2>
+<table class="tableCss">
+    <tr>
+        <td>
+            <div>3.1 Office no. or block no.</div>
+            $!data.officeAddress.houseNo
+        </td>
+        <td>
+            <div>3.2 Building Name / Apartment Name</div>
+            $!data.officeAddress.buildingName
+        </td>
+        <td>
+            <div>3.3 State</div>
+            $!data.officeAddress.state
+        </td>
+    </tr>
+</table>
+<table class="tableCss">
+    <tr>
+        <td>
+            <div>3.4  District</div>
+            $!data.officeAddress.district
+        </td>
+        <td>
+            <div> 3.5 Taluka</div>
+            $!data.officeAddress.talukaName
+        </td>
+        <td>
+            <div>3.6 Village / City</div>
+            $!data.officeAddress.village
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>3.7 Pincode</div>
+            $!data.officeAddress.pincode
+        </td>
+        <td>
+            <div>3.8 Email Id</div>
+            $!data.mainOfficeEmail
+        </td>
+        <td>
+            <div>3.9 Mobile Number</div>
+            $!data.mainOfficeEmail
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>Attach Document<span>3.10 attach relevant documents </span></div>
+            $!data.getAttachment("3.10")
+        </td>
+    </tr>
+</table>
+
+<div class="hr"></div>
+
+
+
+<h2>2 Workshop Details Change Request</h2>
+
+<table class="tableCss">
+    <tr>
+        <td>
+            <div>4.1 Name of premise</div>
+            $!data.workshopAddress.premisesName
+        </td>
+        <td>
+            <div>4.2 Survey No.</div>
+            $!data.workshopAddress.citySurveyNo
+        </td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>
+            <div>4.3 Addressline1</div>
+            $!data.workshopAddress.addrLine1
+        </td>
+        <td>
+            <div>4.4 Addressline2</div>
+            $!data.workshopAddress.addrLine2
+        </td>
+        <td>
+            <div>4.5 State</div>
+            $!data.workshopAddress.state
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>4.6 District</div>
+            $!data.workshopAddress.district
+        </td>
+        <td>
+            <div>4.7 Taluka</div>
+            $!data.workshopAddress.talukaName
+        </td>
+        <td>
+            <div>4.8 Village / City</div>
+            $!data.workshopAddress.village
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>4.9 Pincode</div>
+            $!data.workshopAddress.pincode
+        </td>
+        <td>
+            <div>4.10 Country</div>
+            #if($!data.workshopAddress.country) $!data.workshopAddress.country #else India #end
+        </td>
+        <td>
+            <div>Attach Document<span>4.11 Attach Relevant documents (If more than one then attach in ZIP) </span></div>
+            $!data.getAttachment("4.11")
+        </td>
+    </tr>
+</table>
+
+<div class="hr"></div>
+
+
+<h2>5. DETAILS OF TESTING INSTRUMENTS CHANGE REQUEST</h2>
+
+<table class="tableFormat firstBottom-tl">
+    <tr>
+        <th>S no.</th>
+        <th>List of Machineries</th>
+        <th>Make</th>
+        <th>Number</th>
+        <th>Serial Numbers </th>
+        <th>Remarks</th>
+    </tr>
+    #foreach( $!testingInstrument in $!data.testingInstruments)
+        <tr>
+            <td>$!testingInstrument.id</td>
+            <td>$!testingInstrument.machineName</td>
+            <td>$!testingInstrument.make</td>
+            <td>$!testingInstrument.number</td>
+            <td>$!testingInstrument.serialNumber</td>
+            <td>$!testingInstrument.remarks</td>
+        </tr>
+    #end
+</table>
+
+
+
+
+
+
+<h2>6. DETAILS OF SAFETY GADGETS CHANGE REQUEST</h2>
+
+<table class="tableFormat firstBottom-tl">
+    <tr>
+        <th>S no.</th>
+        <th>List of Machineries</th>
+        <th >Make</th>
+        <th>Number</th>
+        <th>Remarks</th>
+    </tr>
+    #foreach( $!safetyGadget in $!data.safetyGadgets)
+        <tr>
+            <td>$!safetyGadget.id</td>
+            <td>$!safetyGadget.name</td>
+            <td>$!safetyGadget.make</td>
+            <td>$!safetyGadget.number</td>
+            <td>$!safetyGadget.remarks</td>
+        </tr>
+    #end
+</table>
+
+<h2>7. DETAILS OF COMMUNICATION FACILITIES CHANGE REQUEST</h2>
+<table class="tableCss">
+    <tr>
+        <td COLSPAN="3">
+            <div>7.1 Details of communication facilities</div>
+            $!data.communicationFacilityChangeRequest
+        </td>
+    </tr>
+</table>
+<br>
+
+<h2>8. DETAILS OF  VEHICLES IN POSSESSION FOR TRANSPORTATION OF MATERIAL</h2>
+<table class="tableCss">
+    <tr>
+        <td COLSPAN="3">
+            <div>8.1 Details of vehicle in possession for transportation of material</div>
+            $!data.vehiclePossessionDetail
+        </td>
+        #if($!data.vehiclePossessionDetail == "OWNED")
+            <td>
+                <div>Attach Document<span>8.2 RC book proof </span></div>
+                $!data.getAttachment("8.2")
+            </td>
+        #elseif($!data.vehiclePossessionDetail=="RENTED")
+            <td>
+                <div>Attach Document<span>8.2 RC book proof Agreement </span></div>
+                $!data.getAttachment("8.2")
+            </td>
+        #end
+    </tr>
+</table>
+
+<br>
+
+<h2>9. LEGAL STATUS CHANGE REQUEST</h2>
+<table class="tableCss">
+    <tr>
+        <td COLSPAN="3">
+            <div>9.1 Legal status of company or agency</div>
+            $!data.agencyLegalStatus
+        </td>
+        <td>
+            <div>9.2 Attach List of lifts/escalator erected/ maintained with details of license no. lift location, address, districtwise</div>
+            $!data.getAttachment("9.2")
+        </td>
+    </tr>
+</table>
+
+    <div>
+        #if ($data.iagree)
+            <input type="checkbox" id="iagree" name="iagree" checked disabled>
+        #else
+            <input type="checkbox" id="iagree" name="iagree" disabled>
+        #end
+        I myself is liable for prosecution for false information.
+    </div>
+    <p>
+        <button class="print" onclick="window.print()">Print This Page</button>
+    </p>
+</div>
+</body>
+</html>

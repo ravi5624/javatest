@@ -1,0 +1,387 @@
+<html>
+<head>
+    <title>
+        $data.applicationName
+    </title>
+
+    <style>
+        html, body {height:100%; width:100%; font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+        body {font-family: arial, sans-serif; font-size: 14px; color:#333; background-color:#fff; padding: 0; margin: 0;}
+        .container-fluid {width: 100%; max-width: 1230px; padding: 20px; margin: 0 auto; box-sizing: border-box; }
+
+        h2 {font-size: 20px; color: #000; text-transform: uppercase; padding:25px 0 10px; font-weight:normal;}
+        .hr {border-bottom: 1px dotted #333; height: 2px; width: 100%; margin: 10px 0;}
+        p {padding-bottom: 20px; line-height: 22px;}
+        table { border-collapse: collapse; border-spacing: 0;}
+
+        .tableCss {margin: 10px -10px; width: 100%;}
+        .tableCss th, .tableCss td {width: 33.3333%; padding:10px; line-height:normal; text-align: left; border: 0 !important;}
+        .tableCss td.colSpa-66  {width: 66.6666%;}
+        .tableCss td.colSpa-100  {width: 100%;}
+        .tableCss td > div {font-weight: bold; padding-bottom: 15px;}
+        .tableCss td > div > span {font-weight: normal; display: block; padding-top: 5px; color: #999;}
+        .tableCss tr:nth-child(odd) th { background-color: #f2f2f2; }
+        .tableCss tr:nth-child(even) th { background-color: #ffffff;}
+
+        .tableFormat {margin: 10px 0; width: 100%; }
+        .tableFormat th, .tableFormat td {padding:10px; line-height:normal; text-align: left; word-break:break-word;}
+
+        .firstBottom-tl {border: 1px solid #999 !important; /*margin:0 10px;*/ }
+        .firstBottom-tl tr > th {border-bottom: 1px solid #999;}
+        .firstBottom-tl th {background-color: #F1F1F1;}
+        .topBorder > td {border-top: 1px solid #999;}
+        .firstBottom-tl tr > th:first-child {border-right:1px solid #999;}
+        .firstBottom-tl tr > td:first-child {border-right:1px solid #999;}
+
+        .paddBotZero {padding-bottom: 0 !important;}
+        .liteFont td {color:#999;}
+
+        .print {border: 0; background: #333; color: #fff; padding: 10px 15px; cursor: pointer;}
+
+
+        .tableLine {width: 100%;}
+        .tableLine th, .tableLine td {padding:10px; line-height:normal; text-align: left; border:1px solid #999;}
+        .tableLine th {background-color: #F1F1F1;}
+        .ac {text-align: center !important;}
+
+
+        @media print {
+            .container-fluid { width: 100%; padding: 0;}
+            table {page-break-inside:auto;}
+            tr{ page-break-inside:avoid; page-break-after:auto;}
+            th, td {word-break:normal !important;}
+
+
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <h1>CHIEF ELECTRICAL INSPECTOR AND COLLECTOR OF ELECTRICITY DUTY
+        <div>$data.applicationName</div>
+    </h1>
+
+    <div style="text-align: right;">
+        Date:<script> document.write(new Date().toLocaleDateString("en-GB")); </script>
+    </div>
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>1. Accident Report Applied For</div>
+                $!data.accidentFor
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>2 Date of Accident</div>
+                $!data.accidentDate
+            </td>
+            <td>
+                <div>3. Time of Accident</div>
+                $!data.accidentTime
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="hr"></div>
+    <h3>Place of Accident (Address of)</h3>
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>4.1 Address Line 1</div>
+                $!data.accidentPlace.addrLine1
+            </td>
+            <td>
+                <div>4.2 Address Line 2</div>
+                $!data.accidentPlace.addrLine2
+            </td>
+            <td>
+                <div>4.3 Address Line 3</div>
+                $!data.accidentPlace.addressLine3
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>4.4 State</div>
+                $!data.accidentPlace.state
+            </td>
+            <td>
+                <div>4.5 District</div>
+                $!data.accidentPlace.district
+            </td>
+            <td>
+                <div>4.6 Taluka</div>
+                $!data.accidentPlace.talukaName
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <div>4.7 Village / City</div>
+                $!data.accidentPlace.village
+            </td>
+        </tr>
+    </table>
+    <div class="hr"></div>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>5. Name of owner</div>
+                $!data.ownerName
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div class="hr"></div>
+    <h3>6. Details of victim</h3>
+    <table class="tableFormat firstBottom-tl">
+        <tr>
+            <th>S No.</th>
+            <th>Name of victim</th>
+            <th>Father's name</th>
+            <th>Gender of Victim</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>ContactNo</th>
+        </tr>
+        #foreach($!victim in $!data.victims)
+            <tr class="topBorder">
+                <td>$velocityCount</td>
+                <td>$!victim.name</td>
+                <td>$!victim.fatherName</td>
+                <td>$!victim.gender</td>
+                <td>$!victim.age</td>
+                <td>$!victim.email</td>
+                <td>$!victim.contactNo</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="6">
+                    <div class="paddBotZero">
+                        <strong>
+                            Victim Address
+                        </strong>
+                    </div>
+                </td>
+            </tr>
+            <tr class="liteFont">
+                <td></td>
+                <td>Address Line 1</td>
+                <td>Address Line 2</td>
+                <td>Address Line 3</td>
+                <td>Taluka</td>
+                <td>District</td>
+                <td>State</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>$!victim.victimPostalAddress.addrLine1</td>
+                <td>$!victim.victimPostalAddress.addrLine2</td>
+                <td>$!victim.victimPostalAddress.addressLine3</td>
+                <td>$!victim.victimPostalAddress.talukaName</td>
+                <td>$!victim.victimPostalAddress.district</td>
+                <td>$!victim.victimPostalAddress.state</td>
+            </tr>
+        #end
+    </table>
+    <div class="hr"></div>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>7.1 Type of Accident</div>
+                $!data.accidentType
+            </td>
+            <td>
+                <div>7.1 Was the postmortem performed ?</div>
+                $!data.isPostmortemperformed
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <div class="hr"></div>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>8. Victim was authorized an employee under serction 13?</div>
+                $!data.isPersonAuthorized
+            </td>
+            <td>
+                <div>8.1 Designation of person</div>
+                $!data.personDesgination
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <div class="hr"></div>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>9. Description of the job undertaken</div>
+                $!data.jobDescription
+            </td>
+            <td>
+                <div>10. Whether such person was allowed to work on the job ?</div>
+                $!data.isPersonAllowed
+            </td>
+            <td>
+                #if($!data.accidentFor == "LIFT" || $!data.accidentFor == "lift")
+                    <div>11. Registration number of the license of Lift</div>
+                #else
+                    <div>11. Registration number of the license of escalator</div>
+                #end
+                $!data.licenceNo
+            </td>
+        </tr>
+    </table>
+    <div class="hr"></div>
+    #if($!data.accidentFor == "LIFT" || $!data.accidentFor == "lift")
+        <h3>Details of authorized person by whom the lift is erected or maintained.</h3>
+    #else
+        <h3>Details of authorized person by whom the escalator is erected or maintained.</h3>
+    #end
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>12.1 Name of Authorization agency</div>
+                $!data.agencyName
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>
+                12.2 Address of authorization agency
+            </b></td>
+        </tr>
+        <tr>
+            <td>
+                <div>12.2.1 Block no. or office no.</div>
+                $!data.businessAddress.houseNo
+            </td>
+            <td>
+                <div>12.2.2 Building name & Land mark</div>
+                $!data.businessAddress.houseNo
+            </td>
+            <td>
+                <div>12.2.3 State</div>
+                $!data.businessAddress.state
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>12.2.4 District</div>
+                $!data.businessAddress.district
+            </td>
+            <td>
+                <div>12.2.5 Taluka</div>
+                $!data.businessAddress.talukaName
+            </td>
+            <td>
+                <div>12.2.6 Village / City</div>
+                $!data.personAddress.village
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <div>12.2.7 Pincode</div>
+                $!data.businessAddress.pincode
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>12.2.8 Email address</div>
+                $!data.maintainerEmail
+            </td>
+            <td>
+                <div>12.2.9 Mobile or landline No.</div>
+                $!data.maintainerContactNo
+            </td>
+            <td>
+                <div>12.2.10 Website address</div>
+                $!data.maintainerWebsite
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <div class="hr"></div>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>13. Describe fully the nature and extent of injuries</div>
+                $!data.injuriesDescription
+            </td>
+            <td>
+                <div>14. Detailed causes leading to the accident</div>
+                $!data.detailedAccidentCauses
+            </td>
+            <td>
+                <div>15. Action taken regarding this</div>
+                $!data.takenAction
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>16.  Whether the District Magistrate and Police Station concerned have been notified of the accident?</div>
+                $!data.isPoliceConcerned
+            </td>
+            <td>
+                <div>16.1. Give Details</div>
+                $!data.policeConcernedDetails
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <div>17.  Steps taken to preserve the evidence</div>
+                $!data.accidentEvidene
+            </td>
+            <td>
+                <div>18. Name and designation of the person(s) assisting, supervising the person(s) killed or injured.</div>
+                $!data.assistingDescription
+            </td>
+            <td>
+                <div>19. Name and designation of the persons present at and witnessed the accident</div>
+                $!data.witnessDescription
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>20. Any other information/ remarks</div>
+                $!data.remarks
+            </td>
+        </tr>
+    </table>
+    <div class="hr"></div>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div><span>21. Valid Govt ID Proof </span></div>
+                $!data.getAttachment("21")
+            </td>
+            <td>
+                <div> <span> 22. Other Relevant Attachments </span></div>
+                $!data.getAttachment("22")
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <div>
+        #if ($data.iagree)
+            <input type="checkbox" id="iagree" name="iagree" checked disabled>
+        #else
+            <input type="checkbox" id="iagree" name="iagree" disabled>
+        #end
+        I myself is liable for prosecution for false information.
+    </div>
+    <p>
+        <button class="print" onclick="window.print()">Print This Page</button>
+    </p>
+</div>
+</body>
+</html>

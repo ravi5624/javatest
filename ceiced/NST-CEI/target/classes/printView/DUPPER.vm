@@ -1,0 +1,252 @@
+<html>
+<head>
+    <title>$!data.applicationName</title>
+<style>
+    html, body {height:100%; width:100%; font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+    body {font-family: arial, sans-serif; font-size: 14px; color:#333; background-color:#fff; padding: 0; margin: 0;}
+
+    .container-fluid {max-width: 1230px; padding-top: 20px; padding-bottom: 20px; margin: 0 auto;}
+
+    h2 {font-size: 20px; color: #000; text-transform: uppercase; padding:25px 0 10px; font-weight:normal;}
+    .hr {border-bottom: 1px dotted #333; height: 2px; width: 100%; margin: 10px 0;}
+    p {padding-bottom: 20px; line-height: 22px;}
+    table { border-collapse: collapse; border-spacing: 0;}
+
+    .tableCss {margin: 10px -10px; width: 100%;}
+    .tableCss th, .tableCss td {width: 33.3333%; padding:10px; line-height:normal; text-align: left; border: 0 !important;}
+    .tableCss td.colSpa-66  {width: 66.6666%;}
+    .tableCss td.colSpa-100  {width: 100%;}
+    .tableCss td > div {font-weight: bold; padding-bottom: 15px;}
+    .tableCss td > div > span {font-weight: normal; display: block; padding-top: 5px; color: #999;}
+    .tableCss tr:nth-child(odd) th { background-color: #f2f2f2; }
+    .tableCss tr:nth-child(even) th { background-color: #ffffff;}
+
+    .tableFormat {margin: 10px 0; width: 100%; }
+    .tableFormat th, .tableFormat td {padding:10px; line-height:normal; text-align: left;}
+
+    .firstBottom-tl {border: 1px solid #999 !important; /*margin:0 10px;*/ }
+    .firstBottom-tl tr > th {border-bottom: 1px solid #999;}
+    .firstBottom-tl th {background-color: #F1F1F1;}
+    .topBorder > td {border-top: 1px solid #999;}
+    .firstBottom-tl tr > th:first-child {border-right:1px solid #999;}
+    .firstBottom-tl tr > td:first-child {border-right:1px solid #999;}
+
+    .print {border: 0; background: #333; color: #fff; padding: 10px 15px; cursor: pointer;}
+
+    @media print {
+    .container-fluid { width: 100%;}
+    table {page-break-inside:auto;}
+    tr{ page-break-inside:avoid; page-break-after:auto }
+    }
+    </style>
+</head>
+<body>
+    #if($data.createdBy == 'WIREMAN')
+        #set( $userType = 'wireman')
+        #set( $userTypeCaps = 'Wireman')
+        #set( $userTypeFullCaps = 'WIREMAN')
+    #else
+        #set( $userType = 'supervisor')
+        #set( $userTypeCaps = 'Supervisor')
+        #set( $userTypeFullCaps = 'SUPERVISOR')
+    #end
+    <div class="container-fluid">
+        <h2><center>CHIEF ELECTRICAL INSPECTOR AND COLLECTOR OF ELECTRICITY DUTY
+            <br>
+            $userTypeFullCaps DUPLICATE PERMIT DETAILS FORM
+        </center>
+        </h2>
+        <div style="text-align: right;">
+            Date:<script> document.write(new Date().toLocaleDateString("en-GB")); </script>
+        </div>
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>1. Name of Applicant</div>
+                    $!data.getApplicantFullName()
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>2. Applying for $userType permit or exemption certificate or marksheet</div>
+
+                    #foreach($!duplicateType in $!data.duplicateType)
+                        #if($!duplicateType =="exemption_certificate")
+                            #set( $isExemptionCertificate = true)
+                        #end
+                        #if($!duplicateType =="wireman_or_supervisor_permit")
+                            #set( $isWiremanSuperPermit = true)
+                        #end
+                        #if($!duplicateType =="marksheet")
+                            #set( $isMarksheert = true)
+                        #end
+                    #end
+
+                    #if($!isExemptionCertificate == true)
+                        <input type="checkbox" id="exemption" name="exemption" checked disabled>
+                    #else
+                        <input type="checkbox" id="exemption" name="exemption" disabled>
+                    #end
+                        Exemption certificate
+                        <br/>
+
+                    #if($!isWiremanSuperPermit == true)
+                        <input type="checkbox" id="suppermit" name="suppermit" checked disabled>
+                    #else
+                        <input type="checkbox" id="suppermit" name="suppermit" disabled>
+                    #end
+                        $userTypeCaps Permit
+                        <br/>
+                    #if($!isMarksheert == true)
+                        <input type="checkbox" id="wirsupmarksheet" name="wirsupmarksheet" checked disabled>
+                    #else
+                        <input type="checkbox" id="wirsupmarksheet" name="wirsupmarksheet" disabled>
+                    #end
+                        $userTypeCaps marksheet
+
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="hr"></div>
+
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>3. $userTypeCaps Permit No.</div>
+                    $!data.permitNo
+                </td>
+                <td>
+                    <div>4. Date Of Issue Of Permit</div>
+                    $!data.formatDate($!data.permitIssueDate)
+                </td>
+                <td>
+                    <div>4.1 Attach Document
+                        <span>Attach Photocopy of Permit</span>
+                    </div>
+                    $!data.getAttachment("4.1")
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+
+        <h2>CONTACT DETAILS</h2>
+
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>5. Mobile No.</div>
+                    $!data.mobile
+                </td>
+                <td>
+                    <div>6. Alternate Mobile No. (Optional)</div>
+                    $!data.altMobile
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7. Email Id Of The Applicant</div>
+                    $!data.email
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        <h2>8. ADDRESS</h2>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>8.1. House No. / Flat No. / Block No.</div>
+                    #if($!data.parmanentAddress.houseNo != '')
+                        $!data.parmanentAddress.houseNo
+                    #else
+                        &nbsp;
+                    #end
+                </td>
+                <td>
+                    <div>8.2 Building Name / Apartment Name</div>
+                    $!data.parmanentAddress.buildingName
+                </td>
+                <td>
+                    <div>8.3 State</div>
+                    $!data.parmanentAddress.state
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>8.4 District</div>
+                    $!data.parmanentAddress.district
+                </td>
+                <td>
+                    <div>8.5 Taluka</div>
+                    $!data.parmanentAddress.talukaName
+                </td>
+                <td>
+                    <div>8.6 Village / City</div>
+                    $!data.parmanentAddress.village
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>8.7 Pincode</div>
+                    $!data.parmanentAddress.pincode
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>Attach Document
+                        <span>8.8 Attach electricity bill for address proof or any Govt. valid ID proof</span>
+                    </div>
+                    $!data.getAttachment("8.7")
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+
+        <table class="tableCss">
+        <tr>
+            <td colspan="3"><b>9. Attach Document</b></td>
+        </tr>
+            <tr>
+                <td>
+                    <div><span>9.1 Attach Passport size Photograph</span></div>
+                    <img width="100" src="$!data.getImageInBase64("9.1")" alt="$!data.getAttachment("9.1")">
+                </td>
+                <td>
+                    <div><span>9.2 Signature</span></div>
+                    <img width="100" src="$!data.getImageInBase64("9.2")" alt="$!data.getAttachment("9.2")">
+                </td>
+                <td>
+                    <div><span>9.3 Attach Affidavit</span></div>
+                    $!data.getAttachment("9.3")
+                </td>
+            </tr>
+        </table>
+        <p>
+            #if ($data.iagree)
+                <input type="checkbox" id="iagree" name="iagree" checked disabled>
+            #else
+                <input type="checkbox" id="iagree" name="iagree" disabled>
+            #end
+
+            I hereby declare that the particular stated above are correct and true to the best my knowledge.
+        </p>
+        <div class="hr"></div>
+
+        <p>
+            <button class="print" onclick="window.print()">Print This Page</button>
+        </p>
+    </div>
+</body>
+</html>

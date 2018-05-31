@@ -1,0 +1,39 @@
+{
+  "id": 132,
+  "applicationId": "20171222XIQ1J",
+  "fileNumber": "20180103-WIRMODI-6FZYF",
+  "applicationName": "Wireman Modification",
+  "type": "WIRMODI",
+  "status": "File_in_Processing",
+  "permitNo": "opopopopo",
+  "isNameCorrection": true,
+  "surname": "patidar",
+  "firstName": "ravi",
+  "middleName": "singh",
+  "isAddressChange": true,
+  "parmanentAddress": {
+    "id": 143,
+    "addrLine1": null,
+    "addrLine2": null,
+    "addressType": "PERMANENT",
+    "houseNo": "lo",
+    "buildingName": "jkj",
+    "state": "GUJARAT",
+    "district": "Ahmedabad",
+    "talukaName": "Surat",
+    "village": null,
+    "pincode": "111212"
+  },
+  "attachments": [
+    {
+      "id": "201712221HIIG",
+      "doc_type": "pdf",
+      "doc_name": "2.pdf",
+      "absolute_path": "/home/vishal/CEICED/DATA/CED/20171222XIQ1J/201712221HIIG.pdf",
+      "form_part": "1",
+      "related_field_name": "Attach electricty bill for address proof or any Govt. valid ID proof",
+      "field_identifier": "6.7",
+      "portal_variable_name": "attach_per_address_proof"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+<html>
+<head>
+    <title>
+        $data.applicationName
+    </title>
+    <style>
+        html, body {height:100%; width:100%; font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+        body {font-family: arial, sans-serif; font-size: 14px; color:#333; background-color:#fff; padding: 0; margin: 0;}
+
+        .container-fluid {max-width: 1230px; padding-top: 20px; padding-bottom: 20px; margin: 0 auto;}
+
+        h2 {font-size: 20px; color: #000; text-transform: uppercase; padding:25px 0 10px; font-weight:normal;}
+        .hr {border-bottom: 1px dotted #333; height: 2px; width: 100%; margin: 10px 0;}
+        p {padding-bottom: 20px; line-height: 22px;}
+        table { border-collapse: collapse; border-spacing: 0;}
+
+        .tableCss {margin: 10px -10px; width: 100%;}
+        .tableCss th, .tableCss td {width: 33.3333%; padding:10px; line-height:normal; text-align: left; border: 0 !important;}
+        .tableCss td.colSpa-66  {width: 66.6666%;}
+        .tableCss td.colSpa-100  {width: 100%;}
+        .tableCss td > div {font-weight: bold; padding-bottom: 15px;}
+        .tableCss td > div > span {font-weight: normal; display: block; padding-top: 5px; color: #999;}
+        .tableCss tr:nth-child(odd) th { background-color: #f2f2f2; }
+        .tableCss tr:nth-child(even) th { background-color: #ffffff;}
+
+        .tableFormat {margin: 10px 0; width: 100%; }
+        .tableFormat th, .tableFormat td {padding:10px; line-height:normal; text-align: left;}
+
+        .firstBottom-tl {border: 1px solid #999 !important; /*margin:0 10px;*/ }
+        .firstBottom-tl tr > th {border-bottom: 1px solid #999;}
+        .firstBottom-tl th {background-color: #F1F1F1;}
+        .topBorder > td {border-top: 1px solid #999;}
+        .firstBottom-tl tr > th:first-child {border-right:1px solid #999;}
+        .firstBottom-tl tr > td:first-child {border-right:1px solid #999;}
+
+        .print {border: 0; background: #333; color: #fff; padding: 10px 15px; cursor: pointer;}
+
+        @media print {
+            .container-fluid { width: 100%;}
+            table {page-break-inside:auto;}
+            tr{ page-break-inside:avoid; page-break-after:auto }
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="container-fluid">
+    <h1>CHIEF ELECTRICAL INSPECTOR AND COLLECTOR OF ELECTRICITY DUTY
+        <div>$data.applicationName</div>
+    </h1>
+
+    <div style="text-align: right;">
+        Date:<script> document.write(new Date().toLocaleDateString("en-GB")); </script>
+    </div>
+    <div class="hr"></div>
+
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>1. Applied For.</div>
+              $!data.liftEscalatorType
+            </td>
+        </tr>
+        <tr>
+            <td>
+                #if($!data.liftEscalatorType == "LIFT")
+                    <div>2.  Lift Licence number</div>
+                #else
+                    <div>2.  Escalator Licence number</div>
+                #end
+
+              $!data.licenseNumber
+            </td>
+            <td>
+                <div>3. Date of issue of Licence</div>
+              $!data.licenseIssueDate
+            </td>
+            <td>
+                <div>4. Expiry date of Licence</div>
+              $!data.licenseExpiryDate
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>5.  Full Name of Licence</div>
+              $!data.licenseeFullName
+            </td>
+        </tr>
+    </table>
+    <div class="hr"></div>
+    #if($!data.liftEscalatorType == "LIFT")
+        <h3>6. Address of premises where lift is installed</h3>
+    #else
+        <h3>6. Address of premises where escalator is installed</h3>
+    #end
+    <table class="tableCss">
+        <tr>
+            <td>
+                #if($!data.liftEscalatorType == "LIFT")
+                    <div>6.1 Name of site where the lift is placed</div>
+                #else
+                    <div>6.1 Name of site where the escalator is placed</div>
+                #end
+              $!data.liftSiteAddress.siteName
+            </td>
+            <td>
+                <div>6.2 TOWN PLANNING SCHEME NO</div>
+              $!data.liftSiteAddress.schemeNo
+            </td>
+
+            <td>
+                <div>6.3 FP NO</div>
+              $!data.liftSiteAddress.fpNo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>6.4  RS NO</div>
+              $!data.liftSiteAddress.rsNo
+            </td>
+
+            <td>
+                <div> 6.5 SUB PLOT NO</div>
+              $!data.liftSiteAddress.subPlotNo
+            </td>
+
+            <td>
+                <div>6.6 BLOCK/TENAMENT NO</div>
+              $!data.liftSiteAddress.tenamentNo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>6.7  CITY SURVEY NO</div>
+              $!data.liftSiteAddress.citySurveyNo
+            </td>
+            <td>
+                <div>6.8 House No. / Flat No. / Block No.</div>
+                #if($!data.liftSiteAddress.houseNo != '')
+                    $!data.liftSiteAddress.houseNo
+                #else
+                    &nbsp;
+                #end
+            </td>
+            <td>
+                <div>6.9 Building Name / Apartment Name</div>
+              $!data.liftSiteAddress.buildingName
+            </td>
+        </tr>
+    </table>
+    <table class="tableCss">
+        <tr>
+            <td>
+                <div>6.10  State</div>
+              $!data.liftSiteAddress.state
+            </td>
+            <td>
+                <div>6.11  District</div>
+              $!data.liftSiteAddress.district
+            </td>
+            <td>
+                <div>6.12 Taluka</div>
+              $!data.liftSiteAddress.talukaName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>6.13 Pincode</div>
+              $!data.liftSiteAddress.pincode
+            </td>
+        </tr>
+    </table>
+    <div class="hr"></div>
+
+    <h3>7. Do you want to change owner name or correspondance address or any other?</h3>
+    $!data.isAddressOrOwnerChange
+
+    <div class="hr"></div>
+    <h3>Attachments</h3>
+    <table class="tableCss">
+        <tr>
+            <td>
+                #if($!data.liftEscalatorType == "LIFT")
+                    <div><span>8. Attachment original license of lift</span></div>
+                #else
+                    <div><span>8. Attachment original license of escalator</span></div>
+                #end
+                $!data.getAttachment("8")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div><span>9. Attachment relevant documents for renewal</span></div>
+              $!data.getAttachment("9")
+            </td>
+        </tr>
+    </table>
+    <p>
+        <button class="print" onclick="window.print()">Print This Page</button>
+    </p>
+
+</div>
+<div>
+    #if ($data.iagree)
+        <input type="checkbox" id="iagree" name="iagree" checked disabled>
+    #else
+        <input type="checkbox" id="iagree" name="iagree" disabled>
+    #end
+    I myself is liable for prosecution for false information.
+</div>
+</body>
+</html>

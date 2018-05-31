@@ -1,0 +1,1058 @@
+<html>
+
+<head>
+    <title>$!data.applicationName</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: sans-serif;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: arial, sans-serif;
+            font-size: 14px;
+            color: #333;
+            background-color: #fff;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container-fluid {
+            max-width: 1230px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #000;
+            text-transform: uppercase;
+            padding: 25px 0 10px;
+            font-weight: normal;
+        }
+
+        .hr {
+            border-bottom: 1px dotted #333;
+            height: 2px;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        p {
+            padding-bottom: 20px;
+            line-height: 22px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .tableCss {
+            margin: 10px -10px;
+            width: 100%;
+        }
+
+        .tableCss th,
+        .tableCss td {
+            width: 33.3333%;
+            padding: 10px;
+            line-height: normal;
+            text-align: left;
+            border: 0 !important;
+        }
+
+        .tableCss td.colSpa-66 {
+            width: 66.6666%;
+        }
+
+        .tableCss td.colSpa-100 {
+            width: 100%;
+        }
+
+        .tableCss td > div {
+            font-weight: bold;
+            padding-bottom: 15px;
+        }
+
+        .tableCss td > div > span {
+            font-weight: normal;
+            display: block;
+            padding-top: 5px;
+            color: #999;
+        }
+
+        .tableCss tr:nth-child(odd) th {
+            background-color: #f2f2f2;
+        }
+
+        .tableCss tr:nth-child(even) th {
+            background-color: #ffffff;
+        }
+
+        .tableFormat {
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .tableFormat th,
+        .tableFormat td {
+            padding: 10px;
+            line-height: normal;
+            text-align: left;
+        }
+
+        .firstBottom-tl {
+            border: 1px solid #999 !important;
+            /*margin:0 10px;*/
+        }
+
+        .firstBottom-tl tr > th {
+            border-bottom: 1px solid #999;
+        }
+
+        .firstBottom-tl th {
+            background-color: #F1F1F1;
+        }
+
+        .topBorder > td {
+            border-top: 1px solid #999;
+        }
+
+        .firstBottom-tl tr > th:first-child {
+            border-right: 1px solid #999;
+        }
+
+        .firstBottom-tl tr > td:first-child {
+            border-right: 1px solid #999;
+        }
+
+        .print {
+            border: 0;
+            background: #333;
+            color: #fff;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        @media print {
+            .container-fluid {
+                width: 100%;
+            }
+            table {
+                page-break-inside: auto;
+            }
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-fluid">
+    <h3>
+        <center>
+          CHIEF ELECTRICAL INSPECTOR AND COLLECTOR OF ELECTRICITY DUTY</br>
+          $!data.applicationName
+        </center>
+    </h3>
+    <div class="hr"></div>
+
+    <div class="container-fluid">
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>1. Name of the owner/applicant</div>
+                    $!data.leApplicantName
+                </td>
+                <td>
+                    <div>Agency Name</div>
+                    $!data.agencyName
+                </td>
+            </tr>
+        </table>
+        <h3>2. Address of the owner/applicant</h3>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>2.1 Block No</div>
+                    $!data.applicantAddress.houseNo
+                </td>
+                <td>
+                    <div>2.2 Building name & Land mark</div>
+                    $!data.applicantAddress.buildingName
+                </td>
+                <td>
+                    <div>2.3 State</div>
+                    $!data.applicantAddress.state
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>2.4 District</div>
+                    $!data.applicantAddress.district
+                </td>
+                <td>
+                    <div>2.5 Taluka</div>
+                    $!data.applicantAddress.talukaName
+                </td>
+                <td>
+                    <div>2.6 Village / City</div>
+                    $!data.applicantAddress.village
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>2.7 Pincode</div>
+                    $!data.applicantAddress.pincode
+                </td>
+                <td>
+                    <div>2.8 Email address</div>
+                    $!data.applicantEmail
+                </td>
+                <td>
+                    <div>2.9 Mobile or landline No</div>
+                    $!data.applicantMobile
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div> 3. Is there any appointed local agent? </div>
+                    $!data.isLocalAgent
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3">
+                    <div> 4. Name of the local agent </div>
+                    $!data.localAgentName
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>5. Address of the local agent</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>5.1 block no</div>
+                    $!data.localAgentAddress.houseNo
+                </td>
+                <td>
+                    <div>5.2 Building name & Land mark</div>
+                    $!data.localAgentAddress.buildingName
+                </td>
+                <td>
+                    <div>5.3 State</div>
+                    $!data.localAgentAddress.state
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>5.4 District</div>
+                    $!data.localAgentAddress.district
+                </td>
+                <td>
+                    <div>5.5 Taluka</div>
+                    $!data.localAgentAddress.talukaName
+                </td>
+                <td>
+                    <div>5.6 Village / City</div>
+                    $!data.localAgentAddress.village
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>5.7 Pincode</div>
+                    $!data.localAgentAddress.pincode
+                </td>
+                <td>
+                    <div>5.8 Email address</div>
+                    $!data.localAgentEmail
+                </td>
+                <td>
+                    <div>5.9 Mobile or landline No</div>
+                    $!data.localAgentContactNo
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div> 6. Name of the site where lift is placed</div>
+                    $!data.liftSiteAddress.siteName
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>7. Address of site where lift is placed</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7.1 Town planning scheme no</div>
+                    $!data.liftSiteAddress.schemeNo
+                </td>
+                <td>
+                    <div>7.2 FP NO</div>
+                    $!data.liftSiteAddress.fpNo
+                </td>
+                <td>
+                    <div>7.3 RS NO</div>
+                    $!data.liftSiteAddress.rsNo
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7.4 Sub plot no</div>
+                    $!data.liftSiteAddress.subPlotNo
+                </td>
+                <td>
+                    <div>7.5 Block tenament no</div>
+                    $!data.liftSiteAddress.tenamentNo
+                </td>
+                <td>
+                    <div>7.6 City servey no</div>
+                    $!data.liftSiteAddress.citySurveyNo
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7.7 Block No</div>
+                    $!data.liftSiteAddress.houseNo
+                </td>
+                <td>
+                    <div>7.8 Building name & Land mark</div>
+                    $!data.liftSiteAddress.buildingName
+                </td>
+                <td>
+                    <div>7.9 State</div>
+                    $!data.liftSiteAddress.state
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7.10 District</div>
+                    $!data.liftSiteAddress.district
+                </td>
+                <td>
+                    <div>7.11 Taluka</div>
+                    $!data.liftSiteAddress.talukaName
+                </td>
+                <td>
+                    <div>7.12 Village / City</div>
+                    $!data.liftSiteAddress.village
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7.13 Pincode</div>
+                    $!data.liftSiteAddress.pincode
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div> 8. Name of the person who install lift</div>
+                    $!data.personName
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>9. Address of the person who install lift</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>9.1 block no</div>
+                    $!data.personAddress.houseNo
+                </td>
+                <td>
+                    <div>9.2 Building name & Land mark</div>
+                    $!data.personAddress.buildingName
+                </td>
+                <td>
+                    <div>9.3 State</div>
+                    $!data.personAddress.state
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>9.4 District</div>
+                    $!data.personAddress.district
+                </td>
+                <td>
+                    <div>9.5 Taluka</div>
+                    $!data.personAddress.talukaName
+                </td>
+                <td>
+                    <div>9.6 Village / City</div>
+                    $!data.personAddress.village
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>9.7 Pincode</div>
+                    $!data.personAddress.pincode
+                </td>
+                <td>
+                    <div>9.8 Email address</div>
+                    $!data.personEmail
+                </td>
+                <td>
+                    <div>9.9 Mobile or landline No</div>
+                    $!data.personMobile
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div> 10. Type of lift(purpose of lift)</div>
+                    $!data.liftType
+                </td>
+                <td>
+                    <div> 11. Sub category of Lift</div>
+                    $!data.subCategoryLift
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>12 Make of lift</div>
+                    $!data.makeOfLift
+                </td>
+                <td>
+                    <div>13 Number of lift required</div>
+                    $!data.numberOfLift
+                </td>
+                <td>
+                    <div>14 Number of passengers</div>
+                    $!data.numberOfPassengers
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>15 Rated load(Kg)</div>
+                    $!data.ratedLoad
+                </td>
+                <td>
+                    <div>16 Rated Speed(Kg)</div>
+                    $!data.ratedSpeed
+                </td>
+                <td>
+                    <div>17 Travel in meters</div>
+                    $!data.travelMeters
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>17.1 Travel Time</div>
+                    $!data.travelTime
+                </td>
+            </tr>
+        </table>
+        <div class="hr"></div>
+
+        <h3> 18. Floors details in lift </h3>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div> 18.1 Number of Basement Floors</div>
+                    $!data.basementFloors
+                </td>
+                <td>
+                    <div> 18.2 Number of Ground Floors</div>
+                    $!data.groundFloors
+                </td>
+                <td>
+                    <div> 18.3 Number of Mezzaine Floors</div>
+                    $!data.mezzaineFloors
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>19 Number of floors served</div>
+                    $!data.servedFloors
+                </td>
+                <td>
+                    <div>20 Number of entrances</div>
+                    $!data.numberOfEntrances
+                </td>
+                <td>
+                    <div>20.1 Specify the floors which are closed?</div>
+                    $!data.closedFloors
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>20.2 Number of dummy floors</div>
+                    $!data.dummyFloors
+                </td>
+                <td>
+                    <div>21 Method of control for lift</div>
+                    $!data.controlMethodForLift
+                </td>
+                <td>
+                    <div>22 Type of lift door operation with its devices</div>
+                    $!data.liftDoorOperationType
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+        <h3> Details of car frame, platform, internal size of car.</h3>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div> Length of Car</div>
+                    $!data.carLength
+                </td>
+                <td>
+                    <div> Breadth of Car</div>
+                    $!data.carBreadth
+                </td>
+                <td>
+                    <div> 23. Internal size of car</div>
+                    $!data.internalCarSize
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>24. Details of platform</div>
+                    $!data.platformDetails
+                </td>
+                <td colspan="2">
+                    <div>25. Details of Car Frame</div>
+                    $!data.carFrameDetails
+                </td>
+            </tr>
+        </table>
+        <div class="hr"></div>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>26. Details of car doors</div>
+                    $!data.carDoorDetails
+                </td>
+                <td>
+                    <div>27. Details of landing doors</div>
+                    $!data.landingDoorDetails
+                </td>
+                <td>
+                    <div>28. Details of locking arrangement</div>
+                    $!data.lockingArrangementDetails
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>29. Position of counterweight</div>
+                    $!data.counterweightPosition
+                </td>
+                <td>
+                    <div>30. Approximate Kg in counterweight</div>
+                    $!data.counterweightApproxKg
+                </td>
+            </tr>
+        </table>
+        <div class="hr"></div>
+        <h3> Details of lift pit, lift well enclosure and lifting beam</h3>
+        <h3> 31. Size of lift pit (mm).</h3>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div> 31.1 Length</div>
+                    $!data.liftPitLength
+                </td>
+                <td>
+                    <div> 31.2 Breadth</div>
+                    $!data.liftPitBreadth
+                </td>
+                <td>
+                    <div> 31.3 Height</div>
+                    $!data.liftPitWidth
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>32. Size of lift well enclosure (mm).</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div> 32.1 Length</div>
+                    $!data.liftWellLength
+                </td>
+                <td>
+                    <div> 32.2 Breadth</div>
+                    $!data.liftWellBreadth
+                </td>
+                <td>
+                    <div> 32.3 Height</div>
+                    $!data.liftWellHeight
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>33. Details of construction for lift well enclosure and lifting beam</div>
+                    $!data.liftWellAndBeamDetails
+                </td>
+                <td colspan="2">
+                    <div>34. Distance of total head room</div>
+                    $!data.headRoomDistance
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+        <h3> 35. Details of Buffer</h3>
+        <table class="tableCss" border="1">
+            <tr>
+                <td>
+                    Type of Buffer
+                </td>
+                <td>
+                    <div>Car Buffer</div>
+                    $!data.carBufferDetail.bufferType
+                </td>
+                <td>
+                    <div>Counter Weight Buffer</div>
+                    $!data.carBufferDetail.bufferType
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div></div>
+
+                </td>
+                <td>
+                    $!data.carBufferDetail.otherType
+                </td>
+                <td>
+                    $!data.carBufferDetail.otherType
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    No. of Buffer
+                </td>
+                <td>
+                    $!data.carBufferDetail.numberOfBuffer
+                </td>
+                <td>
+                    $!data.carBufferDetail.numberOfBuffer
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Stroks
+                </td>
+                <td>
+                    $!data.carBufferDetail.stroke
+                </td>
+                <td>
+                    $!data.carBufferDetail.stroke
+                </td>
+            </tr>
+        </table>
+
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>36. Bottom car run by (in millimeters)</div>
+                    $!data.bottomCarRunBy
+                </td>
+                <td>
+                    <div>37. Bottom counter weight run by (in millimeters)</div>
+                    $!data.bottomCounterWeightRunBy
+                </td>
+                <td>
+                    <div>38. Bottom counter weight clearance (mm)</div>
+                    $!data.bottomCounterWeightClearance
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>39. Top counter weight clearance</div>
+                    $!data.topCounterWeightClearance
+                </td>
+                <td>
+                    <div>40. Bottom car clearance</div>
+                    $!data.bottomCarClearance
+                </td>
+                <td>
+                    <div>41. Top car clearance</div>
+                    $!data.topCarClearance
+                </td>
+            </tr>
+        </table>
+        <h3>42. Details of lift well dimensions</h3>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>42.1 Length</div>
+                    $!data.liftWellDimLength
+                </td>
+                <td>
+                    <div>42.2 Breadth</div>
+                    $!data.liftWellDimBreadth
+                </td>
+                <td>
+                    <div>42.3 Height</div>
+                    $!data.liftWellDimHeight
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>43. Details of car and counter weight guide rails , brackets</div>
+                    $!data.carCounterDetail
+                </td>
+                <td colspan="2">
+                    <div>44. Constructions, design and finish of the car body work..</div>
+                    $!data.carBodyWork
+                </td>
+            </tr>
+        </table>
+        <div class="hr"></div>
+        <h3>45. Distance of machine from the walls of machine room.</h3>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>45.1 Front</div>
+                    $!data.frontDistance
+                </td>
+                <td>
+                    <div>45.2 Rear</div>
+                    $!data.rearDistance
+                </td>
+                <td>
+                    <div>45.3 Left</div>
+                    $!data.leftDistance
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>45.4 Right</div>
+                    $!data.rightDistance
+                </td>
+                <td colspan="2">
+                    <div>46. Position and details of Machine room</div>
+                    $!data.machineRoomDetails
+                </td>
+            </tr>
+        </table>
+
+        <h3>47. Size of machine room.</h3>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>47.1 Length</div>
+                    $!data.machineRoomLength
+                </td>
+                <td>
+                    <div>47.2 Breadth</div>
+                    $!data.machineRoomBreadth
+                </td>
+                <td>
+                    <div>47.3 Height</div>
+                    $!data.machineRoomDimHeight
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>48. Details of gear machine</div>
+                    $!data.machineGearDetail
+                </td>
+                <td>
+                    <div>49. Details of sheave pulley</div>
+                    $!data.sheavePulleyDetail
+                </td>
+                <td>
+                    <div>49.1 Diameter of sheave pulley</div>
+                    $!data.sheavePulleyDiameter
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>50. Details of Diverter pulley</div>
+                    $!data.diverterPulleyDetail
+                </td>
+                <td>
+                    <div>51. Size of roping</div>
+                    $!data.ropingSize
+                </td>
+                <td>
+                    <div>51.1 Number of rope</div>
+                    $!data.noOfRope
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>52. Description of number , weight and size of the supporting cables</div>
+                    $!data.supportCableDesc
+                </td>
+                <td>
+                    <div>53. Details of over speed governor..</div>
+                    $!data.overSpeedGovernor
+                </td>
+                <td>
+                    <div>54. Details of safety gear</div>
+                    $!data.safetyGearDetail
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>55. Retiring cam / ram provided or not ?</div>
+                    $!data.isRetiringCam
+                </td>
+                <td>
+                    <div>55.1 Details of retiring cam / retiring ram</div>
+                    $!data.retiringCamDetail
+                </td>
+                <td>
+                    <div>56. Details of the construction of the overhead arrangement with the weight and sizes of the beam</div>
+                    $!data.constructionDetail
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>57. Detail of call indicator</div>
+                    $!data.callIndicatorDetail
+                </td>
+                <td>
+                    <div>58. Details of emergency stop switch</div>
+                    $!data.emergencyStopSwitchDetail
+                </td>
+                <td>
+                    <div>59. Details of floor leveling switch</div>
+                    $!data.floorLevelDetail
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>60. Details of floor selector and car gate switch</div>
+                    $!data.floorSelectorDetail
+                </td>
+                <td>
+                    <div>61. Details of slack rope switch</div>
+                    $!data.slackRopeDetail
+                </td>
+                <td>
+                    <div>62. Details of terminal slow down switch</div>
+                    $!data.terminalSlowDetail
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>63. Details of terminal stopping device normal</div>
+                    $!data.terminalStopNormalDetail
+                </td>
+                <td colspan="2">
+                    <div>64. Details of terminal stopping device final</div>
+                    $!data.terminalStopFinalDetail
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>65. Is it required to have fireman switch?</div>
+                    $!data.isFiremanSwitch
+                </td>
+                <td>
+                    <div>65.1 Fill the details</div>
+                    $!data.firemanSwitchDetail
+                </td>
+                <td>
+                    <div>66. Position and Details of main switch</div>
+                    $!data.mainSwitchDetails
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>67. Details of wiring in machine room</div>
+                    $!data.wiringMachineDetail
+                </td>
+                <td>
+                    <div>68. Details of wiring in lift pit</div>
+                    $!data.wiringLiftPitDetail
+                </td>
+                <td>
+                    <div>69. Details of controlling switches</div>
+                    $!data.controlSwitchDetail
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>70. Details of over current protection</div>
+                    $!data.overCurrentProtection
+                </td>
+                <td>
+                    <div>71. Details of alarm system</div>
+                    $!data.alarmSystemDetail
+                </td>
+                <td>
+                    <div>72. Details of earthing</div>
+                    $!data.earthingDetail
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>73. Details of emergency signal and telephone</div>
+                    $!data.emergencySignalDetail
+                </td>
+                <td>
+                    <div>74. Details of power and lighting cable to half way Point in lift well..</div>
+                    $!data.powerDetail
+                </td>
+                <td>
+                    <div>75. Details of main switch(es) and fuse(s) or circuit breaker(s)</div>
+                    $!data.mainCablesDetail
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>76. Proposed date for commencement of work..</div>
+                    $!data.commencementWork
+                </td>
+                <td colspan="2">
+                    <div>77. Proposed date for completion of work. .</div>
+                    $!data.completionWork
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+        <h3> 78. Attachments</h3>
+        <h3> 78.1 Proof of from local</h3>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>
+                        <span>78.1.1 Rajachitti development </span>
+                    </div>
+                    $!data.getAttachment("78.1.1")
+                </td>
+                <td>
+                    <div><span>78.1.2 Approval of civilplan from authority</span></div>
+                    $!data.getAttachment("78.1.2")
+                </td>
+                <td>
+                    <div><span>78.1.3 Key plan</span></div>
+                    $!data.getAttachment("78.1.3")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <span>78.1.4 elevation</span>
+                    </div>
+                    $!data.getAttachment("78.1.4")
+                </td>
+                <td>
+                    <div><span>78.1.5 floor plan bottom  , top and other (indivual)</span></div>
+                    $!data.getAttachment("78.1.5")
+                </td>
+            </tr>
+        </table>
+        <div class="hr"></div>
+        <h3> 78.2 Proof of ownership</h3>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>
+                        <span>78.2.1 Partnership Deed / Memorandum of undertaking / articles of association </span>
+                    </div>
+                    $!data.getAttachment("78.2.1")
+                </td>
+                <td>
+                    <div><span>78.2.2 Sale Deed (if any)</span></div>
+                    $!data.getAttachment("78.2.2")
+                </td>
+                <td colspan="2">
+                    <div><span>78.2.3 Development aggreement</span></div>
+                    $!data.getAttachment("78.2.3")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <span>78.2.4 Assignment deed (if any)</span>
+                    </div>
+                    $!data.getAttachment("78.2.4")
+                </td>
+                <td>
+                    <div><span>78.2.5 Society registration certificate (if any)</span></div>
+                    $!data.getAttachment("78.2.5")
+                </td>
+                <td>
+                    <div><span>78.2.6 Transfer deed (if any)</span></div>
+                    $!data.getAttachment("78.2.6")
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>
+                        <span>78.2.7 Index-2 , 7/12 Index, Template 8(A) , Template 6 & Other</span>
+                    </div>
+                    $!data.getAttachment("78.2.7")
+                </td>
+            </tr>
+        </table>
+        <div class="hr"></div>
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>
+                        <span>78.3 Proof of Sign</span>
+                    </div>
+                    $!data.getAttachment("78.3")
+                </td>
+            </tr>
+        </table>
+        <div class="hr"></div>
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>
+                        <span>78.4 Drawing of Lift</span>
+                    </div>
+                    $!data.getAttachment("78.4")
+                </td>
+            </tr>
+        </table>
+        <p>
+            <button class="print" onclick="window.print()">Print This Page</button>
+        </p>
+    </div>
+</div>
+<div>
+    #if ($data.iagree)
+        <input type="checkbox" id="iagree" name="iagree" checked disabled>
+    #else
+        <input type="checkbox" id="iagree" name="iagree" disabled>
+    #end
+    I myself is liable for prosecution for false information.
+</div>
+</body>
+
+</html>

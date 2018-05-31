@@ -1,0 +1,75 @@
+{
+  "id": 130,
+  "applicationId": "201712276N7T4",
+  "fileNumber": "20180103-CONLIC-6FZYF",
+  "applicationName": "Contractor License",
+  "type": "CONLIC",
+  "status": "File_in_Processing",
+  "surname": "SN",
+  "firstName": "FN",
+  "middleName": "MN",
+  "mobile": "252599998",
+  "email": "252599998",
+  "officeAddress": {
+    "id": 150,
+    "addressType": "OFFICE",
+    "houseNo": "25",
+    "buildingName": "Arise",
+    "state": "Gujarat",
+    "district": "Vadodara",
+    "talukaName": "Sankheda",
+    "village": "Rampura",
+    "pincode": "801103"
+  },
+  "organizationType": "Government",
+  "organizations": [
+    {
+      "id": 160,
+      "nameOfPartner": "Partner-1",
+      "birthDate": "1990-08-02T00:00:00",
+      "homeAddress": "C-120, Surdhara comlex, Opp Sarkh-Gandhinagar Highway Near KArnavati CLib, Ahmedabad-380099"
+    },
+    {
+      "id": 161,
+      "nameOfPartner": "Partner-2",
+      "birthDate": "1990-08-02T00:00:00",
+      "homeAddress": "C-120, Surdhara comlex, Opp Sarkh-Gandhinagar Highway Near KArnavati CLib, Ahmedabad-380099"
+    }
+  ],
+  "isLicenseGranted": true,
+  "contractorLicNo": "545435345",
+  "issueDate": "2015-08-02T02:50:12",
+  "supervisorName": "Vishal Patel",
+  "supervisorAge": 18,
+  "permitNoOfSupervisor": "1",
+  "supervisorPermitIssueDate": "2011-09-02T02:50:12",
+  "supervisorBirthDate": "1995-11-02T02:50:11",
+  "contractorName": "Santosh",
+  "contractorLicenseNo": "010465606",
+  "contractorFromDate": "2010-01-02T02:50:12",
+  "contractorToDate": "2013-02-02T02:50:12",
+  "attachments": [
+    {
+      "id": "0ECGO",
+      "doc_type": "json",
+      "doc_name": "0ECGO.json",
+      "absolute_path": "/CEI/201712276N7T4/0ECGO.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "original_License",
+      "field_identifier": "Original License",
+      "portal_variable_name": "original_License"
+    },
+    {
+      "id": "AO4OU",
+      "doc_type": "json",
+      "doc_name": "AO4OU.json",
+      "absolute_path": "/CEI/201712276N7T4/AO4OU.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "other_documents",
+      "field_identifier": "Other documents",
+      "portal_variable_name": "other_documents"
+    }
+  ]
+}

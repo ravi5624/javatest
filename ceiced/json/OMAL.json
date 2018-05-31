@@ -1,0 +1,192 @@
+{
+  "id": 140,
+  "applicationId": "20180129-OMAL-MDUBX",
+  "fileNumber": "20180129-OMAL-8U6LI",
+  "applicationName": "O & M Agency License",
+  "type": "OMAL",
+  "status": "File_in_Processing",
+  "liftEscalatorType": "LIFT",
+  "agencyName": "Avadhoot Agency",
+  "agencyLegalStatus": "Proprietorship",
+  "establishmentYear": "2017-12-01 00:00:00",
+  "agencyLegalStatusDetails": [
+    {
+      "id": 180,
+      "partnerName": "partner-name"
+    }
+  ],
+  "businessAddress": {
+    "id": 190,
+    "addrLine1": "line1",
+    "addrLine2": "Line2",
+    "addressType": "BUSINESS",
+    "houseNo": "55",
+    "buildingName": "Arise",
+    "state": "GUJARAT",
+    "district": "Vadodara",
+    "talukaName": "vadodara",
+    "village": "sankheda",
+    "pincode": "390019"
+  },
+  "businessEmail": "Business@gmail.com",
+  "businessContactNo": "7878282806",
+  "businessWebsite": "www.gmail.com",
+  "branchAddress": {
+    "id": 191,
+    "addrLine1": "line1",
+    "addrLine2": "Line2",
+    "addressType": "BRANCHOFFICE",
+    "houseNo": "55",
+    "buildingName": "Arise",
+    "state": "GUJARAT",
+    "district": "Vadodara",
+    "talukaName": "vadodara",
+    "village": "sankheda",
+    "pincode": "390019"
+  },
+  "branchEmail": "branch@gmail.com",
+  "branchContactNo": "7878282806",
+  "branchWebsite": "www.gmail.com",
+  "contactEmail": "contact@gmail.com",
+  "contactNo": "7878282806",
+  "isAuthorizationCertificateIssued": "yes",
+  "authorizationNo": "11056",
+  "authorizationCertificateDate": "2017-12-01 00:00:00",
+  "registrationNumberElectricalContractor": "78787979799",
+  "bankName": "SBI",
+  "branchName": "AJWA ROAD",
+  "issueDate": "2017-12-01 00:00:00",
+  "amount": 25000,
+  "bankAddress": "ajwa road sayaji park",
+  "testingInstruments": [
+    {
+      "id": 170,
+      "machineName": "AUTOMATED Lift",
+      "make": "INDIAN STEEL",
+      "number": "5460",
+      "serialNumber": "54654654",
+      "remarks": "no remarks"
+    }
+  ],
+  "safetyGadgets": [
+    {
+      "id": 160,
+      "name": "MY Safety",
+      "make": "INDIAN STEEL",
+      "number": "5460",
+      "remarks": "no remarks"
+    }
+  ],
+  "vehiclePossession": "owned",
+  "remarks": "no remarks",
+  "attachments": [
+    {
+      "id": "HAJUM",
+      "doc_type": "json",
+      "doc_name": "HAJUM.json",
+      "absolute_path": "/CEI/20180129-OMAL-MDUBX/HAJUM.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Partnership Deed",
+      "field_identifier": "3.3",
+      "portal_variable_name": "partnership_deed",
+      "DOCTYPEMAPPING": "UNKNOWN"
+    },
+    {
+      "id": "SJEPP",
+      "doc_type": "json",
+      "doc_name": "SJEPP.json",
+      "absolute_path": "/CEI/20180129-OMAL-MDUBX/SJEPP.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Ownership or Occupacy Rights Proof",
+      "field_identifier": "4.10",
+      "portal_variable_name": "ownership_proof",
+      "DOCTYPEMAPPING": "UNKNOWN"
+    },
+    {
+      "id": "ZQ4SH",
+      "doc_type": "json",
+      "doc_name": "ZQ4SH.json",
+      "absolute_path": "/CEI/20180129-OMAL-MDUBX/ZQ4SH.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Ownership or Occupacy Rights Proof",
+      "field_identifier": "5.9",
+      "portal_variable_name": "ownership_proof",
+      "DOCTYPEMAPPING": "UNKNOWN"
+    },
+    {
+      "id": "ZAQAB",
+      "doc_type": "json",
+      "doc_name": "ZAQAB.json",
+      "absolute_path": "/CEI/20180129-OMAL-MDUBX/ZAQAB.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Copy of authorization certificate",
+      "field_identifier": "7.3",
+      "portal_variable_name": "authorization_certificate",
+      "DOCTYPEMAPPING": "UNKNOWN"
+    },
+    {
+      "id": "SOHYV",
+      "doc_type": "json",
+      "doc_name": "SOHYV.json",
+      "absolute_path": "/CEI/20180129-OMAL-MDUBX/SOHYV.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Attach List of lifts/escalator erected/ maintained with details of license no. lift location, address, districtwise",
+      "field_identifier": "7.4",
+      "portal_variable_name": "maintained_detail",
+      "DOCTYPEMAPPING": "UNKNOWN"
+    },
+    {
+      "id": "ISOWX",
+      "doc_type": "json",
+      "doc_name": "ISOWX.json",
+      "absolute_path": "/CEI/20180129-OMAL-MDUBX/ISOWX.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Company catalogue",
+      "field_identifier": "7.5",
+      "portal_variable_name": "company_catalog",
+      "DOCTYPEMAPPING": "UNKNOWN"
+    },
+    {
+      "id": "G7BPE",
+      "doc_type": "json",
+      "doc_name": "G7BPE.json",
+      "absolute_path": "/CEI/20180129-OMAL-MDUBX/G7BPE.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Copy of electrical contractor license",
+      "field_identifier": "8.1",
+      "portal_variable_name": "contacactor_license",
+      "DOCTYPEMAPPING": "UNKNOWN"
+    },
+    {
+      "id": "UY3WL",
+      "doc_type": "json",
+      "doc_name": "UY3WL.json",
+      "absolute_path": "/CEI/20180129-OMAL-MDUBX/UY3WL.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Copy of Form “I” verified by authority (All Pages)",
+      "field_identifier": "8.2",
+      "portal_variable_name": "contacactor_license",
+      "DOCTYPEMAPPING": "UNKNOWN"
+    },
+    {
+      "id": "1S1FK",
+      "doc_type": "json",
+      "doc_name": "1S1FK.json",
+      "absolute_path": "/CEI/20180129-OMAL-MDUBX/1S1FK.json",
+      "realFileName": "ceiced.json",
+      "form_part": "1",
+      "related_field_name": "Attach solvency certificate of 1 lakhs",
+      "field_identifier": "9",
+      "portal_variable_name": "solvency_certificate",
+      "DOCTYPEMAPPING": "UNKNOWN"
+    }
+  ]
+}

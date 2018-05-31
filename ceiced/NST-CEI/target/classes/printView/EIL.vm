@@ -1,0 +1,658 @@
+<html>
+
+<head>
+    <title>$!data.applicationName</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: sans-serif;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: arial, sans-serif;
+            font-size: 14px;
+            color: #333;
+            background-color: #fff;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container-fluid {
+            max-width: 1230px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #000;
+            text-transform: uppercase;
+            padding: 25px 0 10px;
+            font-weight: normal;
+        }
+
+        .hr {
+            border-bottom: 1px dotted #333;
+            height: 2px;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        p {
+            padding-bottom: 20px;
+            line-height: 22px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .tableCss {
+            margin: 10px -10px;
+            width: 100%;
+        }
+
+        .tableCss th,
+        .tableCss td {
+            width: 33.3333%;
+            padding: 10px;
+            line-height: normal;
+            text-align: left;
+            border: 0 !important;
+        }
+
+        .tableCss td.colSpa-66 {
+            width: 66.6666%;
+        }
+
+        .tableCss td.colSpa-100 {
+            width: 100%;
+        }
+
+        .tableCss td > div {
+            font-weight: bold;
+            padding-bottom: 15px;
+        }
+
+        .tableCss td > div > span {
+            font-weight: normal;
+            display: block;
+            padding-top: 5px;
+            color: #999;
+        }
+
+        .tableCss tr:nth-child(odd) th {
+            background-color: #f2f2f2;
+        }
+
+        .tableCss tr:nth-child(even) th {
+            background-color: #ffffff;
+        }
+
+        .tableFormat {
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .tableFormat th,
+        .tableFormat td {
+            padding: 10px;
+            line-height: normal;
+            text-align: left;
+        }
+
+        .firstBottom-tl {
+            border: 1px solid #999 !important;
+            /*margin:0 10px;*/
+        }
+
+        .firstBottom-tl tr > th {
+            border-bottom: 1px solid #999;
+        }
+
+        .firstBottom-tl th {
+            background-color: #F1F1F1;
+        }
+
+        .topBorder > td {
+            border-top: 1px solid #999;
+        }
+
+        .firstBottom-tl tr > th:first-child {
+            border-right: 1px solid #999;
+        }
+
+        .firstBottom-tl tr > td:first-child {
+            border-right: 1px solid #999;
+        }
+
+        .print {
+            border: 0;
+            background: #333;
+            color: #fff;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        @media print {
+            .container-fluid {
+                width: 100%;
+            }
+            table {
+                page-break-inside: auto;
+            }
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-fluid">
+    <h3>
+        <center>
+          CHIEF ELECTRICAL INSPECTOR AND COLLECTOR OF ELECTRICITY DUTY</br>
+          $!data.applicationName
+        </center>
+    </h3>
+    <div class="hr"></div>
+
+    <div class="container-fluid">
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>1. Name of the owner/applicant</div>
+                    $!data.eiApplicantName
+                </td>
+                <td>
+                    <div>Agency Name</div>
+                    $!data.agencyName
+                </td>
+            </tr>
+        </table>
+        <h4>2. Address of the owner</h4>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>2.1 Block No</div>
+                    $!data.applicantAddress.houseNo
+                </td>
+                <td>
+                    <div>2.2 Building name & Land mark</div>
+                    $!data.applicantAddress.buildingName
+                </td>
+                <td>
+                    <div>2.3 State</div>
+                    $!data.applicantAddress.state
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>2.4 District</div>
+                    $!data.applicantAddress.district
+                </td>
+                <td>
+                    <div>2.5 Taluka</div>
+                    $!data.applicantAddress.talukaName
+                </td>
+                <td>
+                    <div>2.6 Village / City</div>
+                    $!data.applicantAddress.village
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>2.7 Pincode</div>
+                    $!data.applicantAddress.pincode
+                </td>
+                <td>
+                    <div>2.8 Email address</div>
+                    $!data.applicantEmail
+                </td>
+                <td>
+                    <div>2.9 Mobile or landline No</div>
+                    $!data.applicantMobile
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div> 3. Is there any appointed local agent? </div>
+                    $!data.isLocalAgentAppointed
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3">
+                    <div> 4. Name of the local agent </div>
+                    $!data.localAgentName
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>5. Address of the local agent</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>5.1 Block no</div>
+                    $!data.localAgentAddress.houseNo
+                </td>
+                <td>
+                    <div>5.2 Building name & Land mark</div>
+                    $!data.localAgentAddress.buildingName
+                </td>
+                <td>
+                    <div>5.3 State</div>
+                    $!data.localAgentAddress.state
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>5.4 District</div>
+                    $!data.localAgentAddress.district
+                </td>
+                <td>
+                    <div>5.5 Taluka</div>
+                    $!data.localAgentAddress.talukaName
+                </td>
+                <td>
+                    <div>5.6 Village / City</div>
+                    $!data.localAgentAddress.village
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>5.7 Pincode</div>
+                    $!data.localAgentAddress.pincode
+                </td>
+                <td>
+                    <div>5.8 Email address</div>
+                    $!data.localAgentEmail
+                </td>
+                <td>
+                    <div>5.9 Mobile or landline No</div>
+                    $!data.localAgentContactNo
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div> 6. Name of the site where escalator is placed</div>
+                    $!data.liftSiteAddress.siteName
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>7. Address of site where escalator is placed</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7.1 Town planning schema no</div>
+                    $!data.liftSiteAddress.schemeNo
+                </td>
+                <td>
+                    <div>7.2 FP NO</div>
+                    $!data.liftSiteAddress.fpNo
+                </td>
+                <td>
+                    <div>7.3 RS NO</div>
+                    $!data.liftSiteAddress.rsNo
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7.4 Sub plot no</div>
+                    $!data.liftSiteAddress.subPlotNo
+                </td>
+                <td>
+                    <div>7.5 Block tenament no</div>
+                    $!data.liftSiteAddress.tenamentNo
+                </td>
+                <td>
+                    <div>7.6 City servey no</div>
+                    $!data.liftSiteAddress.citySurveyNo
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7.7 block No</div>
+                    $!data.liftSiteAddress.houseNo
+                </td>
+                <td>
+                    <div>7.8 Building name landmark</div>
+                    $!data.liftSiteAddress.buildingName
+                </td>
+                <td>
+                    <div>7.9 State</div>
+                    $!data.liftSiteAddress.state
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7.10 District</div>
+                    $!data.liftSiteAddress.district
+                </td>
+                <td>
+                    <div>7.11 Taluka </div>
+                    $!data.liftSiteAddress.talukaName
+                </td>
+                <td>
+                    <div>7.12 Village / City</div>
+                    $!data.liftSiteAddress.village
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7.13 Pincode</div>
+                    $!data.liftSiteAddress.pincode
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div> 8. Name of the person who installed escalator</div>
+                    $!data.personName
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>9. Address of the person who install escalator</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>9.1 Block no</div>
+                    $!data.personAddress.houseNo
+                </td>
+                <td>
+                    <div>9.2 Building name & Land mark</div>
+                    $!data.personAddress.buildingName
+                </td>
+                <td>
+                    <div>9.3 State</div>
+                    $!data.personAddress.state
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>9.4 District</div>
+                    $!data.personAddress.district
+                </td>
+                <td>
+                    <div>9.5 Taluka</div>
+                    $!data.personAddress.talukaName
+                </td>
+                <td>
+                    <div>9.6 Village / City</div>
+                    $!data.personAddress.village
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>9.7 Pincode</div>
+                    $!data.personAddress.pincode
+                </td>
+                <td>
+                    <div>9.8 Email address</div>
+                    $!data.personEmail
+                </td>
+                <td>
+                    <div>9.9 Mobile or landline No</div>
+                    $!data.personMobile
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div> 10. Maker's Name</div>
+                    $!data.makerName
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>11. Maker's Address</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div> 11.1 Address Line 1</div>
+                    $!data.makerAddress.addrLine1
+                </td>
+                <td>
+                    <div> 11.2 Address Line 2</div>
+                    $!data.makerAddress.addrLine2
+                </td>
+                <td>
+                    <div> 11.3 Address Line 3</div>
+                    $!data.makerAddress.addressLine3
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>11.4 Contact person email ID</div>
+                    $!data.makerEmail
+                </td>
+                <td colspan="2">
+                    <div>11.5 Mobile No.</div>
+                    $!data.makerMobile
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>12. Identification of escalator</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div> 12.1 From floor</div>
+                    $!data.fromFloor
+                </td>
+                <td colspan="2">
+                    <div> 12.2 To floor</div>
+                    $!data.toFloor
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div> 13. Escalator Rated Speed (meter/second)</div>
+                    $!data.ratedSpeed
+                </td>
+                <td>
+                    <div> 14. W (Width in centi. between balusmades)</div>
+                    $!data.balusmadesWidth
+                </td>
+                <td>
+                    <div> 15. A (Horizontal distance between upper and lower comb plates in meter)</div>
+                    $!data.horizontalDistance
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div> 16. Escalator Rated Load (in kg)</div>
+                    $!data.ratedLoad
+                </td>
+                <td>
+                    <div> 17. Escalator Person Capacity (in person/hour) </div>
+                    $!data.escalatorPersonCapacity
+                </td>
+                <td>
+                    <div> 18. Angle of inclination of the escalator with the horizontal</div>
+                    $!data.escalatorAngle
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div> 19. Width of escalator</div>
+                    $!data.escalatorWidth
+                </td>
+                <td>
+                    <div> 20. Vertical rise of the escalator</div>
+                    $!data.verticalRise
+                </td>
+                <td>
+                    <div> 21. The number, description, weight and size of main drive chain step chain, hand rial drive chain & governor drive chain</div>
+                    $!data.description
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div> 21.1 Attach documents if Any</div>
+                    $!data.getAttachment("21.1")
+                </td>
+                <td>
+                    <div> 22. Construction Details</div>
+                    $!data.constructionDetails
+                </td>
+                <td>
+                    <div> 22.1 Attach documents if Any</div>
+                    $!data.getAttachment("22.1")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div> 23. Proposed Date Of Commencement Of Work</div>
+                    $!data.commencementWork
+                </td>
+                <td colspan="2">
+                    <div> 24. Proposed date of completion of work</div>
+                    $!data.completionWork
+                </td>
+            </tr>
+        </table>
+        <div class="hr"></div>
+
+        <h4> 25. Attachments</h4>
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>25.1 Proof of from Local</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div> 25.1.1 Rajachitti development</div>
+                    $!data.getAttachment("25.1.1")
+                </td>
+                <td>
+                    <div> 25.1.2 Approval of civilplan from authority</div>
+                    $!data.getAttachment("25.1.2")
+                </td>
+                <td>
+                    <div> 25.1.3 Key plan</div>
+                    $!data.getAttachment("25.1.3")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>25.1.4 elevation</div>
+                    $!data.getAttachment("25.1.4")
+                </td>
+                <td>
+                    <div>25.1.5 floor plan bottom, top and other (indivual)</div>
+                    $!data.getAttachment("25.1.5")
+                </td>
+            </tr>
+        </table>
+
+        <div class="hr"></div>
+        <h4> 25.2 Proof of ownership</h4>
+        <table class="tableCss">
+            <tr>
+                <td>
+                    <div>
+                        <span>25.2.1 Partnership Deed / Memorandum of undertaking / articles of association </span>
+                    </div>
+                    $!data.getAttachment("25.2.1")
+                </td>
+                <td>
+                    <div><span>25.2.2 Sale Deed (if any)</span></div>
+                    $!data.getAttachment("25.2.2")
+                </td>
+                <td colspan="2">
+                    <div><span>25.2.3 Development aggreement</span></div>
+                    $!data.getAttachment("25.2.3")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <span>25.2.4 Assignment deed (if any)</span>
+                    </div>
+                    $!data.getAttachment("25.2.4")
+                </td>
+                <td>
+                    <div><span>25.2.5 Society registration certificate (if any)</span></div>
+                    $!data.getAttachment("25.2.5")
+                </td>
+                <td>
+                    <div><span>25.2.6 Transfer deed (if any)</span></div>
+                    $!data.getAttachment("25.2.6")
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>
+                        <span>25.2.7 Index-2 , 7/12 Index, Template 8(A) , Template 6</span>
+                    </div>
+                    $!data.getAttachment("25.2.7")
+                </td>
+            </tr>
+        </table>
+        <div class="hr"></div>
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>
+                        <span>25.3 Proof of Sign</span>
+                    </div>
+                    $!data.getAttachment("25.3")
+                </td>
+            </tr>
+        </table>
+        <div class="hr"></div>
+        <table class="tableCss">
+            <tr>
+                <td colspan="3">
+                    <div>
+                        <span>25.4 Drawing of Lift</span>
+                    </div>
+                    $!data.getAttachment("25.4")
+                </td>
+            </tr>
+        </table>
+        <p>
+            <button class="print" onclick="window.print()">Print This Page</button>
+        </p>
+    </div>
+    <div>
+        #if ($data.iagree)
+            <input type="checkbox" id="iagree" name="iagree" checked disabled>
+        #else
+            <input type="checkbox" id="iagree" name="iagree" disabled>
+        #end
+        I myself is liable for prosecution for false information.
+    </div>
+</body>
+
+</html>

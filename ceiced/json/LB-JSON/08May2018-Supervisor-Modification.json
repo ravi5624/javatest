@@ -1,0 +1,44 @@
+{
+  "id": 58471,
+  "applicationId": "20180410-SUPMODI-WDS9K",
+  "fileNumber": "20180410-SUPMODI-OOIXA",
+  "applicationName": "Supervisor Modification",
+  "type": "SUPMODI",
+  "status": "File_in_Processing",
+  "iagree": true,
+  "createdBy": "SUPERVISOR",
+  "permitNo": "SPN123",
+  "isNameCorrection": true,
+  "surname": "SHARMA",
+  "firstName": "ROHIT",
+  "middleName": "ASHWIN",
+  "isAddressChange": null,
+  "isDOBCorrection": true,
+  "attachments": [
+    {
+      "id": "UFBAK",
+      "doc_type": "pdf",
+      "doc_name": "UFBAK.pdf",
+      "absolute_path": "/CEI/20180410-SUPMODI-WDS9K/UFBAK.pdf",
+      "realFileName": "1.pdf",
+      "form_part": "1",
+      "related_field_name": "School leaving certificate or matriculation certificate",
+      "field_identifier": "7.2",
+      "portal_variable_name": "attach_school_leaving_certi",
+      "DOCTYPEMAPPING": "???"
+    },
+    {
+      "id": "P4MPN",
+      "doc_type": "pdf",
+      "doc_name": "P4MPN.pdf",
+      "absolute_path": "/CEI/20180410-SUPMODI-WDS9K/P4MPN.pdf",
+      "realFileName": "1page-2.pdf",
+      "form_part": "1",
+      "related_field_name": "Technical Qualification Document",
+      "field_identifier": "2.1",
+      "portal_variable_name": "technical_qualification_doc",
+      "DOCTYPEMAPPING": "???"
+    }
+  ],
+  "birthDate": "1986-11-12 00:00:00"
+}
